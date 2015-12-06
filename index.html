@@ -4,21 +4,36 @@ title: Home
 ---
 
 <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-9">
 
 <!-- Show last 5 posts here -->
 {% for post in site.posts %}
 
-        <div class="row">
-            <div class="col-12">
-                <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-                <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
-                <span class="category"><i class="icon-tag"></i> {{ post.categories | category_links }}</span><br/>
-                <span class="author"><i class="icon-user"></i> {% if post.author %}{{post.author}}{% else %}{{site.author}}{% endif%}</span>
-            </div>
-
+            <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
+            <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
+            <span class="category"><i class="icon-tag"></i> {{ post.categories | category_links }}</span><br/>
+            <span class="author"><i class="icon-user"></i> {% if post.author %}{{post.author}}{% else %}{{site.author}}{% endif%}</span>
             <div class="entry">{{ post.excerpt }}</div>
-        </div>
-
 {% endfor %}
+
+        </div>
+        <div class="col-xs-12 col-sm-3">
+            {% capture tags %}
+              {% for tag in site.tags %}
+                {{ tag[0] }}
+              {% endfor %}
+            {% endcapture %}
+            {% assign sortedtags = tags | split:' ' | sort %}
+
+            Posts by tag:
+            <ul>
+            {% for tag in sortedtags %}
+              <li>{{ tag }} {{ site.tags[tag] | size }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+
 
 </div>
