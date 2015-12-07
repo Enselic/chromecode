@@ -7,33 +7,52 @@ title: Home
     <div class="row">
         <div class="col-xs-12 col-sm-9">
 
-<!-- Show last 5 posts here -->
+<!-- Show all posts here -->
 {% for post in site.posts %}
 
             <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
             <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
-            <span class="category"><i class="icon-tag"></i> {{ post.categories | category_links }}</span><br/>
-            <span class="author"><i class="icon-user"></i> {% if post.author %}{{post.author}}{% else %}{{site.author}}{% endif%}</span>
             <div class="entry">{{ post.excerpt }}</div>
 {% endfor %}
 
         </div>
         <div class="col-xs-12 col-sm-3">
-            {% capture tags %}
-              {% for tag in site.tags %}
-                {{ tag[0] }}
-              {% endfor %}
-            {% endcapture %}
-            {% assign sortedtags = tags | split:' ' | sort %}
+{% capture tags %}
+    {% for tag in site.tags %}
+        {{ tag[0] }}
+    {% endfor %}
+{% endcapture %}
 
-            Posts by tag:
-            <ul>
-            {% for tag in sortedtags %}
-              <li>{{ tag }} {{ site.tags[tag] | size }}</li>
-            {% endfor %}
-            </ul>
+{% assign sortedtags = tags | split:' ' | sort %}
+
+            <h2>Posts by tag:</h2>
+{% for tag in sortedtags %}
+                <h3>{{ tag }}</h3>
+    {% for post in site.tags[tag] %}
+                        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+    {% endfor %}
+{% endfor %}
+
+            <h3>Posts by year:</h3>
+{% assign headerYear = -1 %}
+{% for post in site.posts %}   
+    {% assign postYear = post.date | date: "%Y" %}
+
+    {% if postYear != headerYear %}
+        {% assign headerYear = postYear %}
+            <h4 id="year-header-{{post.date | date: "%Y"}}">{{ postYear }}</h4>
+    {% endif %}
+
+            <h5><a href="{{ post.url }}">{{ post.title }}</a></h5>
+{% endfor %}
         </div>
     </div>
-
-
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('.year-header').click(function() {
+                $('.menu').slideToggle("fast");
+        });
+    });
+</script>
