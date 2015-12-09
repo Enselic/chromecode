@@ -29,14 +29,12 @@ title: Home
 
             <h3>Posts by tag:</h3>
 {% for tag in sortedtags %}
-                <div>
-                    <h4 id="tag-list-{{ tag }}">{{ tag }}</h4>
-                    <ul class="tag-list-{{ tag }}-ul">
+                <h4 id="tag-list-{{ tag }}">{{ tag }}</h4>
+                <ul class="hide-initially-if-js-enabled tag-list-{{ tag }}-ul">
     {% for post in site.tags[tag] %}
-                        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
-                    </ul>
-                </div>
+                </ul>
 {% endfor %}
 
 
@@ -56,32 +54,13 @@ title: Home
         </div>
     </div>
 </div>
-
 <script>
-document.write('haaaadddddddddddddd');
-//alert('hej');
-document.getElementsByClassName('tag-list-automated-testing-ul')[0].style.display = 'none';
-document.getElementsByClassName('tag-list-continuous-integration-ul')[0].style.display = 'none';
-document.getElementsByClassName('tag-list-gimp-development-ul')[0].style.display = 'none';
-document.getElementsByClassName('tag-list-gimp-development-tips-ul')[0].style.display = 'none';
-document.getElementsByClassName('tag-list-gimp-project-management-ul')[0].style.display = 'none';
-document.getElementsByClassName('tag-list-gimp-ui-improvements-ul')[0].style.display = 'none';
-document.getElementsByClassName('tag-list-life-ul')[0].style.display = 'none';
-document.getElementsByClassName('tag-list-meta-ul')[0].style.display = 'none';
-document.getElementsByClassName('tag-list-tasktaste-ul')[0].style.display = 'none';
-
-    // Do this BEFORE ready() to avoid FOUC 
-    /*$("[id^=tag-list]").each(function(index, value) {
+    $("[id^=tag-list]").each(function(index, value) {
         var ulSelector = '.' + $(value).attr('id') + '-ul';
         $(value).click(function(){
             $(ulSelector).slideToggle("fast");
         });
-        $(ulSelector).css({
-            display: 'none'
-        });
     });
-    $(document).ready(function() {
-    });*/
 </script>
 
 <p>heej</p>
