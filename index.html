@@ -46,10 +46,16 @@ title: Home
 
     {% if postYear != headerYear %}
         {% assign headerYear = postYear %}
-            <h4 id="year-header-{{post.date | date: "%Y"}}">{{ postYear }}</h4>
+        {% if headerYear != -1 %}
+            </ul>
+        {% endif %}
+            <h4 class="tag" id="year-header-{{post.date | date: "%Y"}}">{{ postYear }}</h4>
+            <ul class="hide-initially-if-j-enabled h4 tag-list-{{ tag }}-ul">
     {% endif %}
-
-            <h5><a href="{{ post.url }}">{{ post.title }}</a></h5>
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% if forloop.last %}
+            </ul>
+    {% endif %}
 {% endfor %}
         </div>
     </div>
