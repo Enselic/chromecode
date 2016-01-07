@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>{{ page.title }}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,6 +20,10 @@
           display: none;
         }
 
+        .logo-text {
+            margin-bottom: 30px;
+        }
+
         .tag {
           position: relative;
           display: table;
@@ -30,6 +34,13 @@
           padding: 0 20px;
           white-space: nowrap;
         }
+
+        .nav-entry {
+            padding: 5px 15px;
+            background: #49483e;
+            margin: 100px 20px;
+            line-height: 200%;
+        }        
 
         ul.posts>li {
           /* Using margin makes slideToggle() animation buggy */
@@ -73,7 +84,7 @@
         <![endif]-->
 
         <div class="container">
-            <div class="row">
+            <div class="row logo-oneline">
                 <div class="hidden-xs col-sm-offset-1 col-sm-10 text-center">
                     <!-- To edit below, copy to a .xml (with proper XML header) and open in e.g. Inkscape -->
                     <svg id="chromecodeLogoRoot" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 172.47842 35.355351">
@@ -115,7 +126,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="row">
+            <div class="row logo-text">
                 <div class="visible-xs col-xs-offset-1 col-xs-10 text-center">
                     <!-- To edit below, copy to a .xml (with proper XML header) and open in e.g. Inkscape -->
                     <svg id="chromecodeLogoOnlyTextRoot" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 132.22092 16.042499">
@@ -132,8 +143,19 @@
                     </svg>
                 </div>
             </div>
+
         </div>
 
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="nav-entry h1"><a href="/">Blog</a></span>
+                    <span class="nav-entry h1"><a href="/projects">Projects</a></span>
+                    <span class="nav-entry h1"><a href="/about">About</a></span>
+                </div>
+            </div>
+        </div>
 
         {{ content }}
 
