@@ -16,7 +16,7 @@
           color: #fff;
         }
 
-        .js .hide-initially-if-js-enabled {
+        html.js ul.posts {
           display: none;
         }
 
@@ -28,6 +28,12 @@
           left: 20px;
           height: 40px;
           padding: 0 20px;
+          white-space: nowrap;
+        }
+
+        ul.posts>li {
+          /* Using margin makes slideToggle() animation buggy */
+          padding-bottom: 20px
         }
 
         .tag:hover {
