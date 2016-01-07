@@ -5,18 +5,18 @@ title: Martin Nordholts' Blog
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-9 col-lg-8">
+        <section class="col-xs-12 col-sm-7 col-lg-8">
 
 <!-- Show all posts here -->
 {% for post in site.posts %}
 
             <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
             <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
-            <div class="entry">{{ post.excerpt }}</div>
+            <article class="entry">{{ post.excerpt }}</article>
 {% endfor %}
 
-        </div>
-        <div class="col-xs-12 col-sm-3 col-lg-4">
+        </section>
+        <aside class="col-xs-12 col-sm-5 col-lg-4">
 {% capture tags %}
     {% for tag in site.tags %}
         {{ tag[0] }}
@@ -24,7 +24,6 @@ title: Martin Nordholts' Blog
 {% endcapture %}
 
 {% assign sortedtags = tags | split:' ' | sort %}
-
 
             <h2>Tags:</h2>
 {% for tag in sortedtags %}
@@ -56,7 +55,7 @@ title: Martin Nordholts' Blog
             </ul>
     {% endif %}
 {% endfor %}
-        </div>
+        </aside>
     </div>
 </div>
 <script>
