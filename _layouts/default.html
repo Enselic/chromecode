@@ -38,7 +38,6 @@
         .nav-entry {
             padding: 5px 15px;
             background: #49483e;
-            margin: 100px 20px;
             line-height: 200%;
         }        
 
@@ -92,9 +91,10 @@
         }
 
 
-        /* Why not use Bootstrap's grid system? Because the logo components need very accurate
-        relative sizes in order to look good. Using custom % values makes it much easier to
-        layout the logo, compared to say using nested Bootstrap rows and columns. */
+        /* Why not use Bootstrap's grid system for the logo? Because the logo
+        /* components need very accurate relative sizes in order to look good.
+        /* Using custom % values makes it much easier to layout the logo,
+        /* compared to say using nested Bootstrap rows and columns. */
 
         /* col-xs */
         .logo-icon {
@@ -104,6 +104,11 @@
         .logo-text {
             margin-left: 5%;
             width: 90%;
+            margin-bottom: 15px;
+        }
+        .nav-entry {
+            margin: 0;
+            font-size: 24px; /* .h3 */
         }
 
         /* col-sm */
@@ -117,6 +122,10 @@
                 width: 65.8%;
                 padding-top: 12%;
             }
+            .nav-entry {
+                margin: 0 20px;
+                font-size: 30px; /* .h2 */
+            }
         }
 
 
@@ -129,6 +138,9 @@
             .logo-text {
                 width: 58.33333333%;
                 padding-top: 11%;
+            }
+            .nav-entry {
+                font-size: 36px; /* .h1 */
             }
         }
 
