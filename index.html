@@ -3,20 +3,18 @@ layout: default
 title: Martin Nordholts' Blog
 ---
 
-<div class="container">
-    <div class="row">
-        <section class="col-xs-12 col-sm-7 col-lg-8">
+<div class="row">
+    <section class="col-xs-12 col-sm-7 col-lg-8">
 
-<!-- Show all posts here -->
 {% for post in site.posts %}
 
-            <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-            <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
-            <article class="entry">{{ post.excerpt }}</article>
+        <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
+        <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
+        <article class="entry">{{ post.excerpt }}</article>
 {% endfor %}
 
-        </section>
-        <aside class="col-xs-12 col-sm-5 col-lg-4">
+    </section>
+    <aside class="col-xs-12 col-sm-5 col-lg-4">
 {% capture tags %}
     {% for tag in site.tags %}
         {{ tag[0] }}
@@ -25,19 +23,19 @@ title: Martin Nordholts' Blog
 
 {% assign sortedtags = tags | split:' ' | sort %}
 
-            <h2>Tags:</h2>
+        <h2>Tags:</h2>
 {% for tag in sortedtags %}
-            <h3 class="tag post-list-header">{{ tag }}</h3>
-            <ul class="h4 posts">
+        <h3 class="tag post-list-header">{{ tag }}</h3>
+        <ul class="h4 posts">
     {% for post in site.tags[tag] %}
-                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
-            </ul>
+        </ul>
 {% endfor %}
 
 
 
-            <h2>By year:</h2>
+        <h2>By year:</h2>
 {% assign headerYear = -1 %}
 {% for post in site.posts %}   
     {% assign postYear = post.date | date: "%Y" %}
@@ -45,18 +43,17 @@ title: Martin Nordholts' Blog
     {% if postYear != headerYear %}
         {% assign headerYear = postYear %}
         {% if headerYear != -1 %}
-            </ul>
+        </ul>
         {% endif %}
-            <h3 class="tag post-list-header">{{ postYear }}</h3>
-            <ul class="h4 posts">
+        <h3 class="tag post-list-header">{{ postYear }}</h3>
+        <ul class="h4 posts">
     {% endif %}
-                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% if forloop.last %}
-            </ul>
+        </ul>
     {% endif %}
 {% endfor %}
-        </aside>
-    </div>
+    </aside>
 </div>
 <script>
     $(".post-list-header").each(function() {
