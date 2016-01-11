@@ -98,12 +98,12 @@
             }
         }
 
-        .logo-text {
-            display: inline-block;
+        .sos-set-of-skills {
             font-size: 140px;
         }
 
-        #logo-text-set {
+        .sos-set {
+            display: inline-block;
             font-family: monospace, serif, sans-serif;
             color: #57d6ef;
             -webkit-filter: drop-shadow(0px 0px 10px white);
@@ -111,14 +111,17 @@
             filter: drop-shadow(0px 0px 10px white);
         }
 
-        #logo-text-of {
+        .sos-of {
+            display: inline-block;
             font-family: sans-serif, serif, monospace;
             color: #e7dc6c;
             -webkit-transform: rotate(10deg); /* Safari */
             transform: rotate(10deg);
+            font-size: 50%;
         }
 
-        #logo-text-skills {
+        .sos-skills {
+            display: inline-block;
             font-family: serif, monospace, sans-serif;
             color: #ba94f9;
             -webkit-filter: blur(4px);
@@ -167,7 +170,11 @@
 
         <div class="container">
             <header class="row text-center">
-                <span id="logo-text-set" class="logo-text">set</span> <span id="logo-text-of" class="logo-text">of</span> <span id="logo-text-skills" class="logo-text">skills</span>
+                <span class="sos-set-of-skills">
+                    <span class="sos-set"><span>s</span><span>e</span><span>t</span></span>
+                    <span class="sos-of"><span></span>o<span></span>f</span>
+                    <span class="sos-skills"><span>s</span><span>k</span><span>i</span><span>l</span><span>l</span><span>s</span></span>
+                </span>
             </header>
 
             <nav class="row">
@@ -181,8 +188,12 @@
             {{ content }}
         </div>
 
+        <script>
+        (function(){
+            $()
+        })();
+        </script>
 
-        <!-- TODO: Credit to https://github.com/adobe-fonts/source-code-pro/ -->
 
         <script src="js/chromeCodeLogo.js"></script>
 

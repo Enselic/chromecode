@@ -33,10 +33,6 @@
  (function(win) {
 'use strict';
 
-// This file is intentionally without any external dependencies such as jQuery to make it easy to deploy
-// Requires ECMAScript5
-
-
 
 // Part of http://victorjs.org/ library. Licence above.
 
@@ -99,13 +95,7 @@ Victor.prototype.rotate = function (angle) {
 function PendulumSquare(rotatingPart) {
     this.rotatingPart = rotatingPart;
 
-    // When this.rotation = 0, we want to keep the original rotation
-    if (typeof window.getComputedStyle == 'function') {
-        var baseTransform = window.getComputedStyle(rotatingPart).getPropertyValue("transform");;
-        // TODO make use of parseFloat(/rotate\(([0-9.]+)/.exec(transform)[1]);
-    }
-
-    this.pendulumLength = rotatingPart.innerHTML.length * 2;
+    this.pendulumLength = rotatingPart.html().length / 7;
 
     this.rotationalVel = 0;
     this.rotation = 0;
@@ -141,8 +131,11 @@ PendulumSquare.prototype.applyForce = function(forceVector, deltaTimeSeconds) {
     var fullRotations = (this.rotation / twoPi) | 0;
     this.rotation -= fullRotations * twoPi;
 
+    // TODO: Add initial rotation
     var degrees = this.rotation * 180 / Math.PI;
-    this.rotatingPart.style.transform = 'rotate(' + degrees + 'deg)';
+    this.rotatingPart.css({
+        transform: 'rotate(' + degrees + 'deg)'
+    });
 }
 
 PendulumSquare.prototype.isStandingStill = function() {
@@ -210,17 +203,16 @@ AnimationController.prototype.runFrame = function(timestamp) {
 
 
 // Setup code to keep track of all components that shall rotate
-var textParts = document.getElementsByClassName('logo-text');
 var rotatingParts = [];
-for (var i = 0; i < textParts.length; i++) {
-    rotatingParts.push(new PendulumSquare(textParts.item(i)));
-}
+$('.sos-set-of-skills > span').each(function() {
+    rotatingParts.push(new PendulumSquare($(this)));
+})
 
 var animationController = new AnimationController(win);
 
 // Trigger animation on click
 // TODO: touch/mouse down event for responsiveness
-document.getElementById('logo-text-of').addEventListener('click', function(e) {
+$('.sos-of').click(function() {
     rotatingParts.forEach(function(pendulumSquare) {
         pendulumSquare.kickstartRotation();
     });
