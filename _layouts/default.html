@@ -20,10 +20,6 @@
           display: none;
         }
 
-        .logo-text {
-            margin-bottom: 30px;
-        }
-
         .tag {
           position: relative;
           display: table;
@@ -79,28 +75,8 @@
             height: 0;
         }
 
-        .logo-part {
-            padding: 0;
-            margin: 0;
-            float: left;
-        }
-
-
-        /* Why not use Bootstrap's grid system for the logo? Because the logo
-        /* components need very accurate relative sizes in order to look good.
-        /* Using custom % values makes it much easier to layout the logo,
-        /* compared to say using nested Bootstrap rows and columns. */
 
         /* col-xs */
-        .logo-icon {
-            margin-left: 25%;
-            width: 50%;
-        }
-        .logo-text {
-            margin-left: 5%;
-            width: 90%;
-            margin-bottom: 15px;
-        }
         .nav-entry {
             margin: 0;
             font-size: 24px; /* .h3 */
@@ -108,15 +84,6 @@
 
         /* col-sm */
         @media (min-width : 768px) {
-            .logo-icon {
-                margin-left: 3%;
-                width: 28.2%;
-            }
-            .logo-text {
-                margin-left: 0%;
-                width: 65.8%;
-                padding-top: 12%;
-            }
             .nav-entry {
                 margin: 0 20px;
                 font-size: 30px; /* .h2 */
@@ -126,20 +93,13 @@
 
         /* col-md */
         @media (min-width : 992px) {
-            .logo-icon {
-                margin-left: 8.33333333%;
-                width: 25%;
-            }
-            .logo-text {
-                width: 58.33333333%;
-                padding-top: 11%;
-            }
             .nav-entry {
                 font-size: 36px; /* .h1 */
             }
         }
 
-        .logo-text-all {
+        .logo-text {
+            display: inline-block;
             font-size: 140px;
         }
 
@@ -152,7 +112,6 @@
         }
 
         #logo-text-of {
-            display: inline-block;
             font-family: sans-serif, serif, monospace;
             color: #e7dc6c;
             -webkit-transform: rotate(10deg); /* Safari */
@@ -208,9 +167,7 @@
 
         <div class="container">
             <header class="row text-center">
-                <div class="logo-text-all">
-                <span id="logo-text-set">set</span> <span id="logo-text-of">of</span> <span id="logo-text-skills">skills</span>
-                </div>
+                <span id="logo-text-set" class="logo-text">set</span> <span id="logo-text-of" class="logo-text">of</span> <span id="logo-text-skills" class="logo-text">skills</span>
             </header>
 
             <nav class="row">

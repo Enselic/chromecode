@@ -96,23 +96,16 @@ Victor.prototype.rotate = function (angle) {
 /**
  * Square that has its pivot point at its center, and an imaginary pendulum fixed to it so that it swings.
  */
-function PendulumSquare(svgRectDom) {
-    this.svgRectDom = svgRectDom;
+function PendulumSquare(rotatingPart) {
+    this.rotatingPart = rotatingPart;
 
-    var width = parseFloat(this.svgRectDom.getAttribute("width"));
-    var height = parseFloat(this.svgRectDom.getAttribute("height"));
-    var x = parseFloat(this.svgRectDom.getAttribute("x"));
-    var y = parseFloat(this.svgRectDom.getAttribute("y"));
+    // When this.rotation = 0, we want to keep the original rotation
+    if (typeof window.getComputedStyle == 'function') {
+        var baseTransform = window.getComputedStyle(rotatingPart).getPropertyValue("transform");;
+        // TODO make use of parseFloat(/rotate\(([0-9.]+)/.exec(transform)[1]);
+    }
 
-    // When this.rotation = 0, we want to keep the rotation in the pristine SVG
-    var transform = this.svgRectDom.getAttribute("transform");
-    this.baseRotation = parseFloat(/rotate\(([0-9.]+)/.exec(transform)[1]);
-
-    // Randomness for a more lifelike/dynamic behavior
-    this.pendulumLength = (0.75 + Math.random() * 0.5) * width;
-
-    this.pivotX = x + width / 2;
-    this.pivotY = y + height / 2;
+    this.pendulumLength = rotatingPart.innerHTML.length * 2;
 
     this.rotationalVel = 0;
     this.rotation = 0;
@@ -148,8 +141,8 @@ PendulumSquare.prototype.applyForce = function(forceVector, deltaTimeSeconds) {
     var fullRotations = (this.rotation / twoPi) | 0;
     this.rotation -= fullRotations * twoPi;
 
-    var degrees = this.rotation * 180 / Math.PI + this.baseRotation;
-    this.svgRectDom.setAttribute('transform', 'rotate(' + degrees + ', ' + this.pivotX + ', ' + this.pivotY + ')');
+    var degrees = this.rotation * 180 / Math.PI;
+    this.rotatingPart.style.transform = 'rotate(' + degrees + 'deg)';
 }
 
 PendulumSquare.prototype.isStandingStill = function() {
@@ -181,8 +174,6 @@ AnimationController.prototype.ensureRunning = function() {
 }
 
 AnimationController.prototype.runFrame = function(timestamp) {
-    console.log("AnimationController.prototype.runFrame");
-
     // Handle special case of first invocation
     if (!this.lastTimeStamp) {
         this.lastTimeStamp = timestamp;
@@ -196,7 +187,7 @@ AnimationController.prototype.runFrame = function(timestamp) {
     deltaTimeMs = Math.min(100, deltaTimeMs);
 
     var animationStandingStill = true;
-    pendulumSquares.forEach(function(pendulumSquare) {
+    rotatingParts.forEach(function(pendulumSquare) {
         pendulumSquare.applyForce(GRAVITY, deltaTimeMs / 1000);
 
         if (!pendulumSquare.isStandingStill()) {
@@ -218,23 +209,19 @@ AnimationController.prototype.runFrame = function(timestamp) {
 }
 
 
-// logo <svg> root
-var logoRoot = document.getElementById('chromecodeLogoRoot');
-
-// Setup code to keep track of all <rect>s
-var pendulumSquares = [];
-for (var childNode = logoRoot.firstChild; childNode; childNode = childNode.nextSibling) {
-    if (childNode.nodeName === "rect") {
-        pendulumSquares.push(new PendulumSquare(childNode));;
-    }
+// Setup code to keep track of all components that shall rotate
+var textParts = document.getElementsByClassName('logo-text');
+var rotatingParts = [];
+for (var i = 0; i < textParts.length; i++) {
+    rotatingParts.push(new PendulumSquare(textParts.item(i)));
 }
 
 var animationController = new AnimationController(win);
 
 // Trigger animation on click
 // TODO: touch/mouse down event for responsiveness
-logoRoot.addEventListener('click', function(e) {
-    pendulumSquares.forEach(function(pendulumSquare) {
+document.getElementById('logo-text-of').addEventListener('click', function(e) {
+    rotatingParts.forEach(function(pendulumSquare) {
         pendulumSquare.kickstartRotation();
     });
     animationController.ensureRunning();
