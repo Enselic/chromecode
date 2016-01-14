@@ -10,6 +10,7 @@
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Josefin+Slab:700' rel='stylesheet' type='text/css'>
         <style>
         body {
           background-color: #272822;
@@ -98,35 +99,24 @@
             }
         }
 
-        .sos-set-of-skills {
+        .logo-text {
             font-size: 140px;
+            font-family: 'Josefin Slab', serif;
         }
 
         .sos-set {
             display: inline-block;
-            font-family: monospace, serif, sans-serif;
-            color: #57d6ef;
-            -webkit-filter: drop-shadow(0px 0px 10px white);
-            -o-filter: drop-shadow(0px 0px 10px white);
-            filter: drop-shadow(0px 0px 10px white);
         }
 
         .sos-of {
             display: inline-block;
-            font-family: sans-serif, serif, monospace;
-            color: #e7dc6c;
-            -webkit-transform: rotate(10deg); /* Safari */
-            transform: rotate(10deg);
-            font-size: 50%;
+            font-family: serif, monospace, sans-serif;
+            font-size: 100px;
         }
 
         .sos-skills {
             display: inline-block;
             font-family: serif, monospace, sans-serif;
-            color: #ba94f9;
-            -webkit-filter: blur(4px);
-            -o-filter: blur(4px);
-            filter: blur(4px);
         }
 
         /*
@@ -170,7 +160,80 @@
 
         <div class="container">
             <header class="row text-center">
-                <span class="sos-set-of-skills">
+                <div id="logo">
+                    <!-- l = left, m = middle, r = right, u = up, d = down -->
+                    <div class="diamond-part diamond-left diamond-left-up"></div>
+                    <div class="diamond-part diamond-left diamond-left-down"></div>
+                    <div class="diamond-part diamond-middle diamond-middle-up"></div>
+                    <div class="diamond-part diamond-middle sos-md"></div>
+                    <div class="diamond-part diamond-right sos-ru"></div>
+                    <div class="diamond-part diamond-right sos-rd"></div>
+                </div>
+                <style>
+                #logo {
+                    display: inline-block;
+                    position: relative;
+                    width: 300px;
+                    height: 200px;
+                    border: 1px solid red;
+                }
+
+                .diamond-part {
+                    position: absolute;
+                    width: 0px;
+                    height: 0px;
+                }
+
+                .diamond-left {
+                    left: 10px;
+                    border-left: 30px solid transparent;
+                    border-right: 30px solid transparent;
+                }
+
+                .diamond-left-up {
+                    top: 60px;
+                    border-bottom: 50px solid #57d6ef;
+                }
+
+                .diamond-left-down {
+                    top: 110px;
+                    border-top: 50px solid #57d6ef;
+                }
+
+                .diamond-middle {
+                    left: 65px;
+                    border-left: 40px solid transparent;
+                    border-right: 40px solid transparent;
+                }
+
+                .diamond-middle-up {
+                    top: 20px;
+                    border-bottom: 66.66666667px solid #e7dc6c;
+                }
+
+                .sos-md {
+                    top: 90px;
+                    border-top: 66.66666667px solid #e7dc6c;
+                }
+
+                .diamond-right {
+                    left: 130px;                    
+                    border-left: 53px solid transparent;
+                    border-right: 53px solid transparent;
+                }
+
+                .sos-ru {
+                    top: 20px;
+                    border-bottom: 88.88888889px solid #ba94f9;
+                }
+
+                .sos-rd {
+                    top: 90px;
+                    border-top: 88.88888889px solid #ba94f9;
+                }
+
+                </style>
+                <span class="logo-text">
                     <span class="sos-set"><span>s</span><span>e</span><span>t</span></span>
                     <span class="sos-of"><span></span>o<span></span>f</span>
                     <span class="sos-skills"><span>s</span><span>k</span><span>i</span><span>l</span><span>l</span><span>s</span></span>
