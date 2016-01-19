@@ -10,7 +10,10 @@
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link href='https://fonts.googleapis.com/css?family=Josefin+Slab:700' rel='stylesheet' type='text/css'>
+
+        <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative:900' rel='stylesheet' type='text/css'>
+
+
         <style>
         body {
           background-color: #272822;
@@ -101,7 +104,7 @@
 
         .logo-text {
             font-size: 70px;
-            font-family: 'Josefin Slab', serif;
+            font-family: 'Cinzel Decorative', serif;
         }
 
         .logo-text > span {
@@ -149,6 +152,40 @@
           font-size: 12px;
         }
         */
+
+
+        #logo {
+            display: inline-block;
+            position: relative;
+            width: 290px;
+            height: 200px;
+            overflow: hidden;
+            vertical-align: middle;
+        }
+
+        img[src="assets/diamond-medium.png"] {
+            position: absolute;
+            left: 0px;
+            top: 10px;
+        }
+
+        img[src="assets/diamond-small.png"] {
+            position: absolute;
+            left: 190px;
+            top: 0px;
+        }
+
+        img[src="assets/diamond-large.png"] {
+            position: absolute;
+            left: 70px;
+            top: 20px;
+        }
+
+        .logo-text {
+            position: relative;
+            top: 30px;
+        }
+
         </style>
 
         <!-- From http://www.paulirish.com/2009/avoiding-the-fouc-v3/ -->
@@ -165,91 +202,11 @@
         <div class="container">
             <header class="row text-center">
                 <div id="logo">
-                    <!-- l = left, m = middle, r = right, u = up, d = down -->
-                    <div class="diamond-part diamond-left diamond-left-up"></div>
-                    <div class="diamond-part diamond-left diamond-left-down"></div>
-                    <div class="diamond-part diamond-middle diamond-middle-up"></div>
-                    <div class="diamond-part diamond-middle sos-md"></div>
-                    <div class="diamond-part diamond-right sos-ru"></div>
-                    <div class="diamond-part diamond-right sos-rd"></div>
-                </div>
-                <style>
-                #logo {
-                    display: inline-block;
-                    position: relative;
-                    width: 256px;
-                    height: 183px;
-                }
-
-                .diamond-part {
-                    position: absolute;
-                    width: 0px;
-                    height: 0px;
-                }
-
-                .diamond-left {
-                    left: 10px;
-                    border-left: 30px solid transparent;
-                    border-right: 30px solid transparent;
-                    -webkit-filter: drop-shadow(0px 0px 20px #57d6ef);
-                    -o-filter: drop-shadow(0px 0px 20px #57d6ef);
-                    filter: drop-shadow(0px 0px 20px #57d6ef);
-                }
-
-                .diamond-left-up {
-                    top: 83px;
-                    border-bottom: 50px solid #57d6ef;
-                }
-
-                .diamond-left-down {
-                    top: 133px;
-                    border-top: 50px solid #57d6ef;
-                }
-
-                .diamond-middle {
-                    left: 70px;
-                    border-left: 38px solid transparent;
-                    border-right: 38px solid transparent;
-                    -webkit-filter: drop-shadow(0px 0px 20px #e7dc6c);
-                    -o-filter: drop-shadow(0px 0px 20px #e7dc6c);
-                    filter: drop-shadow(0px 0px 20px #e7dc6c);
-                }
-
-                .diamond-middle-up {
-                    top: 55px;
-                    border-bottom: 64px solid #e7dc6c;
-                }
-
-                .sos-md {
-                    top: 119px;
-                    border-top: 64px solid #e7dc6c;
-                }
-
-                .diamond-right {
-                    left: 144px;                    
-                    border-left: 49px solid transparent;
-                    border-right: 49px solid transparent;
-                    -webkit-filter: drop-shadow(0px 0px 20px #ba94f9);
-                    -o-filter: drop-shadow(0px 0px 20px #ba94f9);
-                    filter: drop-shadow(0px 0px 20px #ba94f9);
-                }
-
-                .sos-ru {
-                    top: 21px;
-                    border-bottom: 81px solid #ba94f9;
-                }
-
-                .sos-rd {
-                    top: 102px;
-                    border-top: 81px solid #ba94f9;
-                }
-
-                </style>
-                <span class="logo-text">
-                    <span>s</span><span>e</span><span>t</span>
-                    <span>o</span><span>f</span>
-                    <span>s</span><span>k</span><span>i</span><span>l</span><span>l</span><span>s</span> 
-                </span>
+                    <img src="assets/diamond-medium.png"/>
+                    <img src="assets/diamond-small.png"/>
+                    <img src="assets/diamond-large.png"/>
+                </div>   
+                <span class="logo-text">Set of Skills</span>
                 <!--span>a software engineer who likes interaction design</span>-->
             </header>
 
