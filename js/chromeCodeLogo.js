@@ -219,4 +219,16 @@ $('.sos-of').click(function() {
     animationController.ensureRunning();
 });
 
+$('.logo-text').click(function() {
+    var logoText = $(this);
+    $({blurAmount: 0}).animate({blurAmount: 100},
+        { step: function(now){
+            logoText.css({
+                '-webkitFilter': 'blur(' + now + 'px)',
+                'opacity': (1 - now/100)
+            });
+        }}
+    );
+})
+
 })(window);
