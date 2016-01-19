@@ -95,7 +95,7 @@ Victor.prototype.rotate = function (angle) {
 function PendulumSquare(rotatingPart) {
     this.rotatingPart = rotatingPart;
 
-    this.pendulumLength = rotatingPart.html().length / 7;
+    this.pendulumLength = rotatingPart.width() / 10;
 
     this.rotationalVel = 0;
     this.rotation = 0;
@@ -204,7 +204,7 @@ AnimationController.prototype.runFrame = function(timestamp) {
 
 // Setup code to keep track of all components that shall rotate
 var rotatingParts = [];
-$('.sos-set-of-skills > span').each(function() {
+$('#logo > img').each(function() {
     rotatingParts.push(new PendulumSquare($(this)));
 })
 
@@ -212,22 +212,33 @@ var animationController = new AnimationController(win);
 
 // Trigger animation on click
 // TODO: touch/mouse down event for responsiveness
-$('.sos-of').click(function() {
+$('#logo').click(function() {
     rotatingParts.forEach(function(pendulumSquare) {
         pendulumSquare.kickstartRotation();
     });
     animationController.ensureRunning();
 });
 
-$('.logo-text').click(function() {
+$('.logo-text > span').click(function() {
     var logoText = $(this);
     $({blurAmount: 0}).animate({blurAmount: 100},
-        { step: function(now){
-            logoText.css({
-                '-webkitFilter': 'blur(' + now + 'px)',
-                'opacity': (1 - now/100)
-            });
-        }}
+        {
+            step: function(now){
+                logoText.css({
+                    '-webkitFilter': 'blur(' + now + 'px)',
+                    'opacity': (1 - now/100)
+                });
+            },
+            always: function(){
+                window.setTimeout(function(){
+                    logoText.css({
+                        '-webkitFilter': '',
+                        'opacity': 1
+                    });
+                }, 3000);
+            }
+
+    }
     );
 })
 
