@@ -95,8 +95,6 @@ Victor.prototype.rotate = function (angle) {
 function PendulumSquare(rotatingPart) {
     this.rotatingPart = rotatingPart;
 
-    this.pendulumLength = rotatingPart.width() / 10;
-
     this.rotationalVel = 0;
     this.rotation = 0;
 }
@@ -119,7 +117,7 @@ PendulumSquare.prototype.applyForce = function(forceVector, deltaTimeSeconds) {
     forcePerpendicular.copy(forceVector);
     forcePerpendicular.subtract(forceNormal);
 
-    var rotationalAcc = pendulum.cross(forcePerpendicular) / this.pendulumLength;
+    var rotationalAcc = pendulum.cross(forcePerpendicular) / Math.max(10, this.rotatingPart.width() / 10);
 
     this.rotationalVel += rotationalAcc * deltaTimeSeconds;
     this.rotation += this.rotationalVel * deltaTimeSeconds;
@@ -134,7 +132,9 @@ PendulumSquare.prototype.applyForce = function(forceVector, deltaTimeSeconds) {
     // TODO: Add initial rotation
     var degrees = this.rotation * 180 / Math.PI;
     this.rotatingPart.css({
-        transform: 'rotate(' + degrees + 'deg)'
+        transform: 'rotate(' + degrees + 'deg)',
+        '-msTransform': 'rotate(' + degrees + 'deg)',
+        '-webkitTransform': 'rotate(' + degrees + 'deg)'
     });
 }
 
@@ -225,6 +225,7 @@ $('.logo-text > span').click(function() {
         {
             step: function(now){
                 logoText.css({
+                    'filter': 'blur(' + now + 'px)',
                     '-webkitFilter': 'blur(' + now + 'px)',
                     'opacity': (1 - now/100)
                 });
@@ -232,6 +233,7 @@ $('.logo-text > span').click(function() {
             always: function(){
                 window.setTimeout(function(){
                     logoText.css({
+                        'filter': '',
                         '-webkitFilter': '',
                         'opacity': 1
                     });
