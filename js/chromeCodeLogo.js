@@ -220,28 +220,40 @@ $('#logo').click(function() {
 });
 
 $('.logo-text > span').click(function() {
-    var logoText = $(this);
-    $({blurAmount: 0}).animate({blurAmount: 100},
-        {
-            step: function(now){
-                logoText.css({
-                    'filter': 'blur(' + now + 'px)',
-                    '-webkitFilter': 'blur(' + now + 'px)',
-                    'opacity': (1 - now/100)
-                });
-            },
-            always: function(){
-                window.setTimeout(function(){
-                    logoText.css({
-                        'filter': '',
-                        '-webkitFilter': '',
-                        'opacity': 1
-                    });
-                }, 3000);
-            }
-
+    var letter = $(this);
+    if (parseFloat(letter.css('opacity')) < 1) {
+        // Let ongoing animation finish
+        return;
     }
-    );
+
+    var animLength = 3000;
+    var blurLength = 50;
+    $({animationProgress: 0}).animate({animationProgress: animLength}, {
+        duration: animLength,
+        step: function(now){
+            var currentOpacity = 0;
+            if (now < blurLength) {
+                currentOpacity = (1 - now / blurLength);
+            } else if (now > animLength - blurLength) {
+                currentOpacity = 1 - (animLength - now) / blurLength;
+            }
+            var blurRadius = (1 - currentOpacity) * 100;
+            var blurFilter = 'blur(' + blurRadius + 'px)';
+            letter.css({  
+                'filter': blurFilter,
+                '-webkitFilter': blurFilter,
+                'opacity': currentOpacity   
+            });
+        },
+        always: function(){
+            letter.css({
+                'filter': '',
+                '-webkitFilter': '',
+                'opacity': 1
+            });
+        }
+
+    });
 })
 
 })(window);
