@@ -8,29 +8,36 @@
 
 @mixin diamond-large($logo-total-width) {
     position: absolute;
-    left: $logo-total-width / 270px * 70px;
-    top: -170px;
+    left: $logo-total-width / 290px * 70px;
+    top: $logo-total-width / 290px * -170px;
+    width: $logo-total-width / 290px * 175px;
+    height: $logo-total-width / 290px * 170px;
 }
 
-.box { @include border-radius(10px); }
-
-
-img[src="/img/diamond-medium.png"] {
+@mixin diamond-medium($logo-total-width) {
     position: absolute;
     left: 0px;
-    top: -180px;
+    top: $logo-total-width / 290px * -180px;
+    width: $logo-total-width / 290px * 130px;
+    height: $logo-total-width / 290px * 125px;
 }
 
-img[src="/img/diamond-small.png"] {
+@mixin diamond-small($logo-total-width) {
     position: absolute;
-    left: 190px;
-    top: -190px;
+    left: $logo-total-width / 290px * 190px;
+    top: $logo-total-width / 290px * -190px;
+    width: $logo-total-width / 290px * 90px;
+    height: $logo-total-width / 290px * 87px;
 }
 
-@media (min-width : 768px) {
-    img[src="/img/diamond-large.png"] {
-        @include diamond-large(30px);
-    }
+img[src="/img/diamond-large.png"] {
+    @include diamond-large(150px);
+}
+img[src="/img/diamond-medium.png"] {
+    @include diamond-medium(150px);
+}
+img[src="/img/diamond-small.png"] {
+    @include diamond-small(150px);
 }
 
 .logo-text {
@@ -50,6 +57,15 @@ img[src="/img/diamond-small.png"] {
         top: -50px;
         font-size: 60px;
     }
+    img[src="/img/diamond-large.png"] {
+        @include diamond-large(200px);
+    }
+    img[src="/img/diamond-medium.png"] {
+        @include diamond-medium(200px);
+    }
+    img[src="/img/diamond-small.png"] {
+        @include diamond-small(200px);
+    }
 }
 
 
@@ -63,7 +79,25 @@ img[src="/img/diamond-small.png"] {
         font-size: 70px;
     }
     img[src="/img/diamond-large.png"] {
-        @include diamond-large(290px);
+        @include diamond-large(270px);
+    }
+    img[src="/img/diamond-medium.png"] {
+        @include diamond-medium(270px);
+    }
+    img[src="/img/diamond-small.png"] {
+        @include diamond-small(270px);
     }
 }
 
+/* col-lg */
+@media (min-width : 1200px) {
+    img[src="/img/diamond-large.png"] {
+        @include diamond-large(290px);
+    }
+    img[src="/img/diamond-medium.png"] {
+        @include diamond-medium(290px);
+    }
+    img[src="/img/diamond-small.png"] {
+        @include diamond-small(290px);
+    }
+}
