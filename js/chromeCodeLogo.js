@@ -129,12 +129,12 @@ PendulumSquare.prototype.applyForce = function(forceVector, deltaTimeSeconds) {
     var fullRotations = (this.rotation / twoPi) | 0;
     this.rotation -= fullRotations * twoPi;
 
-    // TODO: Add initial rotation
     var degrees = this.rotation * 180 / Math.PI;
+    var rotateTransform = 'rotate(' + degrees + 'deg)';
     this.rotatingPart.css({
-        transform: 'rotate(' + degrees + 'deg)',
-        '-msTransform': 'rotate(' + degrees + 'deg)',
-        '-webkitTransform': 'rotate(' + degrees + 'deg)'
+        transform: rotateTransform,
+        '-msTransform': rotateTransform,
+        '-webkitTransform': rotateTransform
     });
 }
 
@@ -212,14 +212,14 @@ var animationController = new AnimationController(win);
 
 // Trigger animation on click
 // TODO: touch/mouse down event for responsiveness
-$('#logo').click(function() {
+$('#logo').on('click touchstart', function() {
     rotatingParts.forEach(function(pendulumSquare) {
         pendulumSquare.kickstartRotation();
     });
     animationController.ensureRunning();
 });
 
-$('.logo-text > span').click(function() {
+$('.logo-text > span').on('click touchstart', function() {
     var letter = $(this);
     if (parseFloat(letter.css('opacity')) < 1) {
         // Let ongoing animation finish
@@ -249,7 +249,7 @@ $('.logo-text > span').click(function() {
             letter.css({
                 'filter': '',
                 '-webkitFilter': '',
-                'opacity': 1
+                'opacity': ''
             });
         }
 
