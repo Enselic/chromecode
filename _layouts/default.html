@@ -136,13 +136,10 @@
         */
 
 
-        #logo {
-            display: inline-block;
+        .logo-container {
             position: relative;
-            width: 290px;
-            height: 200px;
             vertical-align: middle;
-            margin-right: -30px;
+            height: 200px;
         }
 
         img[src="/img/diamond-medium.png"] {
@@ -164,7 +161,7 @@
         }
 
         .logo-text {
-            position: relative;
+            margin-left: 290px;
             top: 30px;
         }
 
@@ -182,13 +179,13 @@
         <![endif]-->
 
         <div class="container">
-            <header class="row text-center">
-                <div id="logo">
-                    <img src="/img/diamond-medium.png"/>
+            <header class="row">
+                <div class="logo-container text-center">
                     <img src="/img/diamond-small.png"/>
+                    <img src="/img/diamond-medium.png"/>
                     <img src="/img/diamond-large.png"/>
-                </div>   
-                <span class="logo-text"><span>S</span><span>e</span><span>t</span><span> </span><span>o</span><span>f</span><span> </span><span>S</span><span>k</span><span>i</span><span>l</span><span>l</span><span>s</span></span>
+                    <span class="logo-text"><span>S</span><span>e</span><span>t</span><span> </span><span>o</span><span>f</span><span> </span><span>S</span><span>k</span><span>i</span><span>l</span><span>l</span><span>s</span></span>
+                </div>
                 <!--span>a software engineer who likes interaction design</span>-->
             </header>
 

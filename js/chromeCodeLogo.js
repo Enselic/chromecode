@@ -204,20 +204,17 @@ AnimationController.prototype.runFrame = function(timestamp) {
 
 // Setup code to keep track of all components that shall rotate
 var rotatingParts = [];
-$('#logo > img').each(function() {
-    rotatingParts.push(new PendulumSquare($(this)));
-})
+$('.logo-container > img').each(function() {
+    var pendulum = new PendulumSquare($(this));
+    rotatingParts.push(pendulum);
+
+    $(this).on('click touchstart', function() {
+        pendulum.kickstartRotation();
+        animationController.ensureRunning();
+    });
+});
 
 var animationController = new AnimationController(win);
-
-// Trigger animation on click
-// TODO: touch/mouse down event for responsiveness
-$('#logo').on('click touchstart', function() {
-    rotatingParts.forEach(function(pendulumSquare) {
-        pendulumSquare.kickstartRotation();
-    });
-    animationController.ensureRunning();
-});
 
 $('.logo-text > span').on('click touchstart', function() {
     var letter = $(this);
