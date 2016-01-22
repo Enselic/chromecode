@@ -8,9 +8,16 @@ title: Martin Nordholts' Blog
 
 {% for post in site.posts %}
 
-        <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-        <span class="date"><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span> by {{post.author}}<br/> 
-        <article class="entry">{{ post.excerpt }}</article>
+        <article class="blog-entry">
+            <header>
+                <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
+                <span class="date"><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span> by {{post.author}}<br/> 
+            </header>
+            
+            <section class="blog-entry-content">{{ post.content }}</section>
+
+            <a href="#">Expand</a>
+        </article>
 {% endfor %}
 
     </section>
