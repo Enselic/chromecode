@@ -5,32 +5,37 @@
   margin-top: 200px;
   margin-right: -30px; }
 
+.logo-text {
+  position: relative;
+  top: 0px;
+  font-size: 60px;
+  font-family: 'Cinzel Decorative', serif; }
+
 img[src="/img/diamond-large.png"] {
   position: absolute;
-  left: 48.27586px;
-  top: -117.24138px;
-  width: 120.68966px;
-  height: 117.24138px; }
+  left: 72.41379px;
+  top: -175.86207px;
+  width: 181.03448px;
+  height: 175.86207px; }
 
 img[src="/img/diamond-medium.png"] {
   position: absolute;
   left: 0px;
-  top: -124.13793px;
-  width: 89.65517px;
-  height: 86.2069px; }
+  top: -186.2069px;
+  width: 134.48276px;
+  height: 129.31034px; }
 
 img[src="/img/diamond-small.png"] {
   position: absolute;
-  left: 131.03448px;
-  top: -131.03448px;
-  width: 62.06897px;
-  height: 60px; }
+  left: 196.55172px;
+  top: -196.55172px;
+  width: 93.10345px;
+  height: 90px; }
 
-.logo-text {
-  position: relative;
-  top: 0px;
-  font-size: 40px;
-  font-family: 'Cinzel Decorative', serif; }
+.logo-container {
+  width: 300px;
+  margin-top: 206.89655px;
+  margin-right: -31.03448px; }
 
 /* col-sm */
 @media (min-width: 768px) {
@@ -62,7 +67,12 @@ img[src="/img/diamond-small.png"] {
     left: 131.03448px;
     top: -131.03448px;
     width: 62.06897px;
-    height: 60px; } }
+    height: 60px; }
+
+  .logo-container {
+    width: 200px;
+    margin-top: 137.93103px;
+    margin-right: -20.68966px; } }
 /* col-md */
 @media (min-width: 992px) {
   .nav-entry {
@@ -92,7 +102,12 @@ img[src="/img/diamond-small.png"] {
     left: 176.89655px;
     top: -176.89655px;
     width: 83.7931px;
-    height: 81px; } }
+    height: 81px; }
+
+  .logo-container {
+    width: 270px;
+    margin-top: 186.2069px;
+    margin-right: -27.93103px; } }
 /* col-lg */
 @media (min-width: 1200px) {
   img[src="/img/diamond-large.png"] {
@@ -114,4 +129,9 @@ img[src="/img/diamond-small.png"] {
     left: 190px;
     top: -190px;
     width: 90px;
-    height: 87px; } }
+    height: 87px; }
+
+  .logo-container {
+    width: 290px;
+    margin-top: 200px;
+    margin-right: -30px; } }

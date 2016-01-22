@@ -1,3 +1,9 @@
+$logo-reference-width: 290px;
+
+@function logo-scale($logo-width) {
+  @return $logo-width / $logo-reference-width;
+}
+
 .logo-container {
     position: relative;
     display: inline-block;
@@ -6,50 +12,55 @@
     margin-right: -30px;
 }
 
-@mixin diamond-large($logo-total-width) {
+@mixin diamond-large($logo-width) {
     position: absolute;
-    left: $logo-total-width / 290px * 70px;
-    top: $logo-total-width / 290px * -170px;
-    width: $logo-total-width / 290px * 175px;
-    height: $logo-total-width / 290px * 170px;
+    left: logo-scale($logo-width) * 70px;
+    top: logo-scale($logo-width) * -170px;
+    width: logo-scale($logo-width) * 175px;
+    height: logo-scale($logo-width) * 170px;
 }
 
-@mixin diamond-medium($logo-total-width) {
+@mixin diamond-medium($logo-width) {
     position: absolute;
     left: 0px;
-    top: $logo-total-width / 290px * -180px;
-    width: $logo-total-width / 290px * 130px;
-    height: $logo-total-width / 290px * 125px;
+    top: logo-scale($logo-width) * -180px;
+    width: logo-scale($logo-width) * 130px;
+    height: logo-scale($logo-width) * 125px;
 }
 
-@mixin diamond-small($logo-total-width) {
+@mixin diamond-small($logo-width) {
     position: absolute;
-    left: $logo-total-width / 290px * 190px;
-    top: $logo-total-width / 290px * -190px;
-    width: $logo-total-width / 290px * 90px;
-    height: $logo-total-width / 290px * 87px;
+    left: logo-scale($logo-width) * 190px;
+    top: logo-scale($logo-width) * -190px;
+    width: logo-scale($logo-width) * 90px;
+    height: logo-scale($logo-width) * 87px;
 }
 
-@mixin diamonds($logo-total-width) {
+@mixin scalable-logo($logo-width) {
     img[src="/img/diamond-large.png"] {
-        @include diamond-large($logo-total-width);
+        @include diamond-large($logo-width);
     }
     img[src="/img/diamond-medium.png"] {
-        @include diamond-medium($logo-total-width);
+        @include diamond-medium($logo-width);
     }
     img[src="/img/diamond-small.png"] {
-        @include diamond-small($logo-total-width);
+        @include diamond-small($logo-width);
+    }
+    .logo-container {
+        width: $logo-width;
+        margin-top: logo-scale($logo-width) * 200px;
+        margin-right: logo-scale($logo-width) * -30px;
     }
 }
-
-@include diamonds(200px);
 
 .logo-text {
     position: relative;
     top: 0px;
-    font-size: 40px;
+    font-size: 60px;
     font-family: 'Cinzel Decorative', serif;
 }
+
+@include scalable-logo(300px);
 
 /* col-sm */
 @media (min-width : 768px) {
@@ -61,7 +72,7 @@
         top: -50px;
         font-size: 60px;
     }
-    @include diamonds(200px);
+    @include scalable-logo(200px);
 }
 
 
@@ -74,10 +85,10 @@
         top: -50px;
         font-size: 70px;
     }
-    @include diamonds(270px);
+    @include scalable-logo(270px);
 }
 
 /* col-lg */
 @media (min-width : 1200px) {
-    @include diamonds(290px);
+    @include scalable-logo(290px);
 }
