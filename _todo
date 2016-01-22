@@ -14,3 +14,4 @@ todo:
 * make initial HTTP request get enough to render site, load rest async
 * layout individual posts pages
 * some CSS3 glittering animations to the diamonds
+* make diamonds logos easier to click

@@ -9,7 +9,7 @@ title: Martin Nordholts' Blog
 {% for post in site.posts %}
 
         <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-        <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
+        <span class="date"><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span> by {{post.author}}<br/> 
         <article class="entry">{{ post.excerpt }}</article>
 {% endfor %}
 
