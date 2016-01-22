@@ -3,3 +3,4 @@ sublime
 _site
 *sublime*
 index.prototype.html
+.sass-cache
