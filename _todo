@@ -1,0 +1,16 @@
+todo:
+* make navbar stay on top on mobile when scrolled down
+* make right margin nice and straight
+* add background to logo
+* add effects to navbar button (css3 anims)
+* add "software engineer + interaction design" to logo somewhere
+* make posts collapsed on mobile
+* add requirejs support
+* add build instructions
+* write blog post
+* add about and projects sections
+* import comments
+* add GA support
+* make initial HTTP request get enough to render site, load rest async
+* layout individual posts pages
+* some CSS3 glittering animations to the diamonds
