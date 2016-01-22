@@ -14,9 +14,9 @@ title: Martin Nordholts' Blog
                 <span class="date"><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span> by {{post.author}}<br/> 
             </header>
             
-            <section class="blog-entry-content">{{ post.content }}</section>
+            <section class="blog-entry-content-collapsed">{{ post.content }}</section>
 
-            <a href="#">Expand</a>
+            <span class="expand">Expand</span>
         </article>
 {% endfor %}
 
@@ -68,4 +68,17 @@ title: Martin Nordholts' Blog
             $(this).next("ul.posts").slideToggle();
         });
     });
+
+    $(".blog-entry .expand").each(function() {
+        $(this).click(function(){
+            var toExpandOrCollapse = $(this).prev("section");
+            if (toExpandOrCollapse.hasClass('blog-entry-content-collapsed')) {
+               $(this).html('Collapse');
+            } else {
+               $(this).html('Expand');
+            }
+            toExpandOrCollapse.toggleClass('blog-entry-content-collapsed');
+        });
+    });
+
 </script>
