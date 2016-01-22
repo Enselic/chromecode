@@ -38,19 +38,26 @@
             margin-bottom: 50px;
         }
 
+        .blog-entry-content {
+            transition: height 1s;
+            transition: opacity 1s;
+            opacity: 100%;
+            height: auto;
+        }
+
         html.js .blog-entry-content-collapsed {
             position: relative;
             overflow: hidden;
-            max-height: 80px;
+            height: 60px;
         }
 
-        html.js .blog-entry-content-collapsed:after {
+        html.js .blog-entry-content:after {
             display: block;
             content: "";
             position: absolute;
             left: 0%;
             bottom: 0%;
-            height: 60px;
+            height: 30px;
             right: 0%;
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#272822+0,272822+100&0+0,1+100 */
             background: -moz-linear-gradient(top, rgba(39,40,34,0) 0%, rgba(39,40,34,1) 100%); /* FF3.6-15 */

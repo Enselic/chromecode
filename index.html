@@ -14,9 +14,9 @@ title: Martin Nordholts' Blog
                 <span class="date"><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span> by {{post.author}}<br/> 
             </header>
             
-            <section class="blog-entry-content-collapsed">{{ post.content }}</section>
+            <section class="blog-entry-content blog-entry-content-collapsed">{{ post.content }}</section>
 
-            <span class="expand">Expand</span>
+            <h5 class="expand">Expand</h5>
         </article>
 {% endfor %}
 
@@ -73,11 +73,18 @@ title: Martin Nordholts' Blog
         $(this).click(function(){
             var toExpandOrCollapse = $(this).prev("section");
             if (toExpandOrCollapse.hasClass('blog-entry-content-collapsed')) {
-               $(this).html('Collapse');
+                $(this).html('Collapse');
             } else {
-               $(this).html('Expand');
+                $(this).html('Expand');
             }
+            var heightBefore = $(toExpandOrCollapse).height();
             toExpandOrCollapse.toggleClass('blog-entry-content-collapsed');
+            var heightAfter = $(toExpandOrCollapse).height();
+            console.log(heightBefore + ' ' + heightAfter);
+            toExpandOrCollapse.height(heightBefore);
+            toExpandOrCollapse.animate({height: heightAfter}, 400, function(){
+                toExpandOrCollapse.css('height', '');
+            });
         });
     });
 
