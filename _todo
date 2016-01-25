@@ -13,7 +13,6 @@ Before initial release
 * layout individual posts pages
 * make diamonds logos easier to click
 * some CSS3 glittering animations to the diamonds
-* Port posts to markdown and ensure first paragraph is text
 
 Possible future improvements:
 * add build instructions
