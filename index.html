@@ -93,11 +93,10 @@ title: Martin Nordholts' Blog
             // Make expand animation speed independent of blog post length
             var pixelsPerSecond = 200;
             var animLengthInMs = diff / pixelsPerSecond * 1000;
-            console.log(diff + ' ' + animLengthInMs);
 
             // Set up initial size and animate
             toExpandOrCollapse.height(heightBefore);
-            toExpandOrCollapse.animate({height: heightAfter}, animLengthInMs, 'linear', function(){
+            toExpandOrCollapse.animate({height: heightAfter}, animLengthInMs, function(){
                 toExpandOrCollapse.css('height', '');
                 if (fadeLastLineAtEndOfAnimation) {
                     toExpandOrCollapse.addClass("fade-last-line");
