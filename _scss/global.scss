@@ -1,0 +1,12 @@
+/*
+sass _scss/global.scss --style compressed > _includes/global.min.css
+*/
+
+html.js .javascript-disabled-warning {
+    display: none;
+}
+
+.javascript-disabled-warning span {
+    background: #49483e;
+}
+

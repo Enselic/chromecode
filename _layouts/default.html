@@ -7,169 +7,18 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-        <!-- Latest compiled and minified CSS -->
-
         <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative:900' rel='stylesheet' type='text/css'>
-
 
         <!-- For local testing -->
         <!-- link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' type='text/css'-->
 
         <style>
-
         {% include bootstrap/css/bootstrap.min.css %}
-
         {% include logo.min.css %}
-
-        html.js ul.posts {
-          display: none;
-        }
-
-        html.js .javascript-disabled-warning {
-            display: none;
-        }
-
-        .javascript-disabled-warning span {
-            background: #49483e;
-        }
-
-        .blog-entry {
-            margin-bottom: 50px;
-        }
-
-        .blog-entry-content {
-            transition: height 1s;
-            transition: opacity 1s;
-            opacity: 100%;
-            height: auto;
-        }
-
-        html.js .blog-entry-content-collapsed {
-            position: relative;
-            overflow: hidden;
-            height: 60px;
-        }
-
-        html.js .blog-entry-content:after {
-            display: block;
-            content: "";
-            position: absolute;
-            left: 0%;
-            bottom: 0%;
-            height: 30px;
-            right: 0%;
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#272822+0,272822+100&0+0,1+100 */
-            background: -moz-linear-gradient(top, rgba(39,40,34,0) 0%, rgba(39,40,34,1) 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(top, rgba(39,40,34,0) 0%,rgba(39,40,34,1) 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom, rgba(39,40,34,0) 0%,rgba(39,40,34,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00272822', endColorstr='#272822',GradientType=0 ); /* IE6-9 */
-        }
-
-        .tag {
-          position: relative;
-          display: table;
-          padding: 5px;
-          background: #999;
-          left: 20px;
-          height: 40px;
-          padding: 0 20px;
-          white-space: nowrap;
-        }
-
-        .nav-entry {
-            padding: 5px 15px;
-            background: #49483e;
-            line-height: 200%;
-        }        
-
-        ul.posts>li {
-          /* Using margin makes slideToggle() animation buggy */
-          padding-bottom: 20px
-        }
-
-        .tag:hover {
-          background: #ddd;
-        }
-
-        .tag:before {
-          position: absolute;
-          left: -20px;
-          top: 0px;
-          content: "";
-          display: inline-block;
-          padding: 0;
-          margin: 0;
-          width: 0px;
-          height: 0px;
-          border-right: 20px solid #999;
-          border-top: 20px solid transparent;
-          border-bottom: 20px solid transparent;
-        }
-
-        .tag:hover:before {
-          border-right: 20px solid #ddd;
-        }
-
-        /* col-xs */
-        .nav-entry {
-            margin: 0;
-            font-size: 24px; /* .h3 */
-        }
-
-        /* col-sm */
-        @media (min-width : 768px) {
-            .nav-entry {
-                margin: 0 20px;
-                font-size: 30px; /* .h2 */
-            }
-        }
-
-
-        /* col-md */
-        @media (min-width : 992px) {
-            .nav-entry {
-                font-size: 30px; /* .h2 */
-            }
-        }
-
-        /* col-lg */
-        @media (min-width : 1200px) {
-            .nav-entry {
-                font-size: 36px; /* .h1 */
-            }
-        }
-
-
-        /*
-        h1,
-        .h1 {
-          font-size: 36px;
-        }
-        h2,
-        .h2 {
-          font-size: 30px;
-        }
-        h3,
-        .h3 {
-          font-size: 24px;
-        }
-        h4,
-        .h4 {
-          font-size: 18px;
-        }
-        h5,
-        .h5 {
-          font-size: 14px;
-        }
-        h6,
-        .h6 {
-          font-size: 12px;
-        }
-        */
-
-
-
+        {% include nav.min.css %}
+        {% include tags.min.css %}
+        {% include global.min.css %}
+        {% include blog-entry.min.css %}
         </style>
 
         <!-- From http://www.paulirish.com/2009/avoiding-the-fouc-v3/ -->
