@@ -1,10 +1,9 @@
 ---
 layout: default
 title: Martin Nordholts' Blog
+tag_title: Posts by tags
+by_year_title: Posts by year
 ---
-
-<div class="row">
-    <section class="col-xs-12 col-sm-7 col-lg-8">
 
 {% for post in site.posts %}
 
@@ -18,91 +17,5 @@ title: Martin Nordholts' Blog
 
             <h5 class="expand">Expand</h5>
         </article>
+
 {% endfor %}
-
-    </section>
-    <aside class="col-xs-12 col-sm-5 col-lg-4">
-{% capture tags %}
-    {% for tag in site.tags %}
-        {{ tag[0] }}
-    {% endfor %}
-{% endcapture %}
-
-{% assign sortedtags = tags | split:' ' | sort %}
-
-        <h2>Tags:</h2>
-{% for tag in sortedtags %}
-        <h3 class="tag post-list-header">{{ tag }}</h3>
-        <ul class="h4 posts">
-    {% for post in site.tags[tag] %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-        </ul>
-{% endfor %}
-
-
-
-        <h2>By year:</h2>
-{% assign headerYear = -1 %}
-{% for post in site.posts %}   
-    {% assign postYear = post.date | date: "%Y" %}
-
-    {% if postYear != headerYear %}
-        {% assign headerYear = postYear %}
-        {% if headerYear != -1 %}
-        </ul>
-        {% endif %}
-        <h3 class="tag post-list-header">{{ postYear }}</h3>
-        <ul class="h4 posts">
-    {% endif %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% if forloop.last %}
-        </ul>
-    {% endif %}
-{% endfor %}
-    </aside>
-</div>
-<script>
-    $(".post-list-header").each(function() {
-        $(this).click(function(){
-            $(this).next("ul.posts").slideToggle();
-        });
-    });
-
-    $(".blog-entry .expand").each(function() {
-        $(this).click(function(){
-            var toExpandOrCollapse = $(this).prev("section");
-            if (toExpandOrCollapse.is(':animated')) {
-                return;
-            }
-            var fadeLastLineAtEndOfAnimation = false;
-            if (toExpandOrCollapse.hasClass('blog-entry-content-collapsed')) {
-                $(this).html('Collapse');
-                toExpandOrCollapse.removeClass("fade-last-line");
-            } else {
-                $(this).html('Expand');
-                fadeLastLineAtEndOfAnimation = true;
-            }
-
-            // Measure sizes to animate between
-            var heightBefore = $(toExpandOrCollapse).height();
-            toExpandOrCollapse.toggleClass('blog-entry-content-collapsed');
-            var heightAfter = $(toExpandOrCollapse).height();
-            var diff = Math.abs(heightAfter - heightBefore);
-
-            // Make expand animation speed independent of blog post length
-            var pixelsPerSecond = 200;
-            var animLengthInMs = diff / pixelsPerSecond * 1000;
-
-            // Set up initial size and animate
-            toExpandOrCollapse.height(heightBefore);
-            toExpandOrCollapse.animate({height: heightAfter}, animLengthInMs, function(){
-                toExpandOrCollapse.css('height', '');
-                if (fadeLastLineAtEndOfAnimation) {
-                    toExpandOrCollapse.addClass("fade-last-line");
-                }
-            });
-        });
-    });
-
-</script>
