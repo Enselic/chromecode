@@ -3,7 +3,6 @@ todo:
 Before initial release
 * make right margin nice and straight
 * add effects to navbar button (css3 anims)
-* add "software engineer + interaction design" to logo somewhere
 * write blog post
 * add projects sections
 * import comments
@@ -15,6 +14,7 @@ Before initial release
 * some CSS3 glittering animations to the diamonds
 
 Possible future improvements:
+* add "software engineer + interaction design" to logo somewhere
 * add build instructions
 * add background to logo
 * make navbar stay on top on mobile when scrolled down

@@ -2,6 +2,10 @@
 sass _scss/nav.scss --style compressed > _includes/nav.min.css
 */
 
+nav {
+    margin-bottom: 60px;
+}
+
 .nav-entry {
     padding: 5px 15px;
     background: #49483e;

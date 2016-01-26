@@ -6,6 +6,12 @@ html.js ul.posts {
     display: none;
 }
 
+.tags {
+    background: #3e3e3b;
+    background-image: url(/img/tags-background.jpg);
+    background-repeat: repeat;
+    padding: 0 30px;
+}
 
 .tag {
     position: relative;
