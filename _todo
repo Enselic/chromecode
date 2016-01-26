@@ -1,17 +1,17 @@
-todo:
+To do:
 
 Before initial release
 * make right margin nice and straight
 * add effects to navbar button (css3 anims)
-* write blog post
-* add projects sections
+* layout individual posts pages
+* Write blog post
 * import comments
 * add GA support, including what is clicked, expanded etc
 * add Discuss comment system
 * make initial HTTP request get enough to render site
-* layout individual posts pages
 * make diamonds logos easier to click
 * some CSS3 glittering animations to the diamonds
+* suffix js with version so a fresh HTML page results in matching js
 
 Possible future improvements:
 * support IE8
