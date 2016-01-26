@@ -1,7 +1,6 @@
 To do:
 
 Before initial release
-* suffix js with version so a fresh HTML page results in matching js
 * add effects to navbar button (css3 anims)
 * add Discuss comment system
 * import comments
@@ -11,10 +10,12 @@ Before initial release
 * Write blog post
 
 Possible future improvements:
+* no need to suffix JS files that are built into a single suffixed JS file...
 * Use Compass for instead of manually CSS property prefixing
 * sanity check in IE8
 * add "software engineer + interaction design" to logo somewhere
 * add build instructions
+* add build scripts, e.g. to autosuffix proper files with md5 hash
 * add background to logo
 * make navbar stay on top on mobile when scrolled down
 * Animate the faded line when blog post expands, and the 'Collapse' to 'Expand' animation
