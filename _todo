@@ -20,3 +20,4 @@ Possible future improvements:
 * add background to logo
 * make navbar stay on top on mobile when scrolled down
 * Animate the faded line when blog post expands, and the 'Collapse' to 'Expand' animation
+* add noscript-variants of lazyloaded imgs
