@@ -1,5 +1,11 @@
 /*
-sass _scss/nav.scss --style compressed > _includes/nav.min.css
+
+/*
+
+for f in _scss/*; do echo sass $f --style compressed ">" _includes/$(basename ${f%%.*}.min.css); done
+
+for f in _scss/*; do sass $f --style compressed ">" _includes/$(basename ${f%%.*}.min.css); done
+
 */
 
 nav {

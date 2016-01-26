@@ -1,7 +1,14 @@
 /*
-sass _scss/global.scss --style compressed > _includes/global.min.css
+
+/*
+
+for f in _scss/*; do echo sass $f --style compressed ">" _includes/$(basename ${f%%.*}.min.css); done
+
+for f in _scss/*; do sass $f --style compressed ">" _includes/$(basename ${f%%.*}.min.css); done
+
 */
 
+/* todo move to bootstrap configuration */
 h1, h2, h3, h4, h5, h6 {
 	font-family: serif;
 }
