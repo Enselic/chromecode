@@ -10,12 +10,11 @@ Before initial release
 * add GA support, including what is clicked, expanded etc
 * add Discuss comment system
 * make initial HTTP request get enough to render site
-* make diamonds logos easier to click
 * suffix js with version so a fresh HTML page results in matching js
 
 Possible future improvements:
 * Use Compass for instead of manually CSS property prefixing
-* support IE8
+* sanity check in IE8
 * add "software engineer + interaction design" to logo somewhere
 * add build instructions
 * add background to logo
