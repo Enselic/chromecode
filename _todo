@@ -11,6 +11,7 @@ Before initial release
 * Write blog post
 
 Possible future improvements:
+* make diamond graphics more crisp
 * no need to suffix JS files that are built into a single suffixed JS file...
 * Use Compass for instead of manually CSS property prefixing
 * sanity check in IE8
