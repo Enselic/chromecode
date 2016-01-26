@@ -1,6 +1,7 @@
 To do:
 
 Before initial release
+* make images in posts appear only after made visible
 * make right margin nice and straight
 * add effects to navbar button (css3 anims)
 * layout individual posts pages
@@ -10,10 +11,10 @@ Before initial release
 * add Discuss comment system
 * make initial HTTP request get enough to render site
 * make diamonds logos easier to click
-* some CSS3 glittering animations to the diamonds
 * suffix js with version so a fresh HTML page results in matching js
 
 Possible future improvements:
+* Use Compass for instead of manually CSS property prefixing
 * support IE8
 * add "software engineer + interaction design" to logo somewhere
 * add build instructions

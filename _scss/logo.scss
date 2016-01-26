@@ -31,15 +31,26 @@ $logo-reference-width: 290px;
     height: logo-scale($logo-width) * 87px;
 }
 
+@mixin glimmerStarter($start-delay) {
+    animation-name: glimmer;
+    animation-delay: $start-delay;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 0.4s;        
+}
+
 @mixin scalable-logo-graphics($logo-width) {
     img[src="/img/diamond-large.png"] {
         @include diamond-large($logo-width);
+        @include glimmerStarter(1.15s);
     }
     img[src="/img/diamond-medium.png"] {
         @include diamond-medium($logo-width);
+        @include glimmerStarter(1s);
     }
     img[src="/img/diamond-small.png"] {
         @include diamond-small($logo-width);
+        @include glimmerStarter(1.3s);
     }
     .logo-container {
         width: $logo-width;
@@ -61,6 +72,22 @@ $logo-reference-width: 290px;
     @include scalable-logo-graphics($logo-width);
     @include scalable-logo-text($logo-width);
 }
+
+@keyframes glimmer {
+    0% {
+        -webkit-filter: brightness(1.0);
+        filter: brightness(1.0);
+    }
+    50% {
+        -webkit-filter: brightness(1.7);
+        filter: brightness(1.7);
+    }
+    100% {
+        -webkit-filter: brightness(1.0);
+        filter: brightness(1.0);
+    }
+}
+
 
 .logo-container {
     position: relative;
