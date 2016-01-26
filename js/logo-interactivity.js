@@ -145,6 +145,22 @@
 
     PendulumSquare.prototype.kickstartRotation = function() {
         this.rotationalVel += 15;
+
+        this.retriggerGlimmerAnimation();
+    }
+
+    PendulumSquare.prototype.retriggerGlimmerAnimation = function() {
+        this.rotatingPart.css({
+            'animationName': 'none',
+            '-webkitAnimationName': 'none',
+        });
+        var rotatingPart = this.rotatingPart;
+        window.setTimeout(function(){
+            rotatingPart.css({
+                'animationName': 'glimmer',
+                '-webkitAnimationName': 'glimmer',
+            });
+        }, 100);
     }
 
 
@@ -210,7 +226,9 @@
         rotatingParts.push(pendulum);
 
         $(this).on('click touchstart', function() {
-            pendulum.kickstartRotation();
+            rotatingParts.forEach(function(rotatingPart) {
+                rotatingPart.kickstartRotation();
+            });
             animationController.ensureRunning();
         });
     });
