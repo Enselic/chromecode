@@ -42,15 +42,15 @@ $logo-reference-width: 290px;
 @mixin scalable-logo-graphics($logo-width) {
     img[src="/img/diamond-large.png"] {
         @include diamond-large($logo-width);
-        @include glimmerStarter(1.15s);
+        @include glimmerStarter(0.65s);
     }
     img[src="/img/diamond-medium.png"] {
         @include diamond-medium($logo-width);
-        @include glimmerStarter(1s);
+        @include glimmerStarter(0.5s);
     }
     img[src="/img/diamond-small.png"] {
         @include diamond-small($logo-width);
-        @include glimmerStarter(1.3s);
+        @include glimmerStarter(0.8s);
     }
     .logo-container {
         width: $logo-width;
@@ -92,7 +92,6 @@ $logo-reference-width: 290px;
 .logo-container {
     position: relative;
     display: inline-block;
-    width: 290px;
     margin-top: 200px;
     margin-right: -30px;
 }
@@ -101,7 +100,7 @@ $logo-reference-width: 290px;
     position: absolute;
 }
 
-@include scalable-logo-graphics(300px);
+@include scalable-logo-graphics(200px);
 
 .logo-text {
     position: relative;
@@ -112,6 +111,7 @@ $logo-reference-width: 290px;
 
 /* between col-xs and col-sm */
 @media (min-width : 540px) {
+    @include scalable-logo(300px);
     .logo-text {
         top: 0px;
         font-size: 60px;

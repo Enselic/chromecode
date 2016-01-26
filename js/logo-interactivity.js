@@ -225,7 +225,10 @@
         var pendulum = new PendulumSquare($(this));
         rotatingParts.push(pendulum);
 
-        $(this).on('click touchstart', function() {
+        $(this).on('mousedown touchstart', function(e) {
+            // Prevent mousedown from triggering later
+            if (e.type === 'touchstart') $(this).off('mousedown');
+
             rotatingParts.forEach(function(rotatingPart) {
                 rotatingPart.kickstartRotation();
             });
@@ -235,15 +238,18 @@
 
     var animationController = new AnimationController(window);
 
-    $('.logo-text > span').on('click touchstart', function() {
+    $('.logo-text > span').on('mousedown touchstart', function(e) {
+        // Prevent mousedown from triggering later
+        if (e.type === 'touchstart') $(this).off('mousedown');
+
         var letter = $(this);
         if (parseFloat(letter.css('opacity')) < 1) {
             // Let ongoing animation finish
             return;
         }
 
-        var animLength = 3000;
-        var blurLength = 50;
+        var animLength = 1300;
+        var blurLength = 300;
         $({animationProgress: 0}).animate({animationProgress: animLength}, {
             duration: animLength,
             step: function(now){
@@ -253,8 +259,8 @@
                 } else if (now > animLength - blurLength) {
                     currentOpacity = 1 - (animLength - now) / blurLength;
                 }
-                var blurRadius = (1 - currentOpacity) * 100;
-                var blurFilter = 'blur(' + blurRadius + 'px)';
+                var blurRadius = (1 - currentOpacity) * 0.1;
+                var blurFilter = 'blur(' + blurRadius + 'em)';
                 letter.css({  
                     'filter': blurFilter,
                     '-webkitFilter': blurFilter,
