@@ -1,6 +1,7 @@
-sublime
-.DS_Store
-_site
 *sublime*
-index.prototype.html
+.DS_Store
 .sass-cache
+_site
+index.prototype.html
+node_modules
+sublime
