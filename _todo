@@ -1,15 +1,14 @@
 To do:
 
 Before initial release
-* make right margin nice and straight
-* add effects to navbar button (css3 anims)
-* layout individual posts pages
-* Write blog post
-* import comments
-* add GA support, including what is clicked, expanded etc
-* add Discuss comment system
-* make initial HTTP request get enough to render site
 * suffix js with version so a fresh HTML page results in matching js
+* add effects to navbar button (css3 anims)
+* add Discuss comment system
+* import comments
+* make right margin nice and straight
+* layout individual posts pages
+* add GA support, including what is clicked, expanded etc
+* Write blog post
 
 Possible future improvements:
 * Use Compass for instead of manually CSS property prefixing
