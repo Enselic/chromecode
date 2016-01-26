@@ -1,6 +1,9 @@
 requirejs.config({
     paths: {
-        "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min"
+        "jquery": "jquery-2.1.4.min"
+    }
+    shims: {
+        "jquery": "jquery-2.1.4.min"
     }
 });
 
