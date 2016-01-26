@@ -1,13 +1,16 @@
 requirejs.config({
     paths: {
-        "jquery": "jquery-2.1.4.min"
-    }
-    shims: {
-        "jquery": "jquery-2.1.4.min"
+        "jquery": "jquery-2.1.4.min",
+        "jquery.lazyload": "jquery.lazyload-1.9.7.min"
+    },
+    shim: {
+        "jquery.lazyload": ["jquery"]
     }
 });
 
-requirejs(['jquery', 'logo-interactivity'], function($) {
+requirejs(['jquery', 'jquery.lazyload', 'logo-interactivity'], function($) {
+    $('img.img-responsive').lazyload();
+
     $(".post-list-header").each(function() {
         $(this).click(function(){
             $(this).next("ul.posts").slideToggle();
