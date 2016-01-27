@@ -1,22 +1,5 @@
-requirejs.config({
-    paths: {
-        "jquery": "jquery-2.1.4.min",
-        "jquery.lazyload": "jquery.lazyload-1.9.7.min",
-        "logo-interactivity": "logo-interactivity-md5_a1f7c226"
-    },
-    shim: {
-        "jquery.lazyload": ["jquery"]
-    }
-});
-
-requirejs(['jquery', 'jquery.lazyload', 'logo-interactivity'], function($) {
-    $('img.img-responsive').lazyload();
-
-    $(".post-list-header").each(function() {
-        $(this).click(function(){
-            $(this).next("ul.posts").slideToggle();
-        });
-    });
+define(['jquery'], function($) {
+    'use strict';
 
     $(".blog-entry .expand").each(function() {
         $(this).click(function(){
@@ -54,3 +37,4 @@ requirejs(['jquery', 'jquery.lazyload', 'logo-interactivity'], function($) {
         });
     });
 });
+

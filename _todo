@@ -12,7 +12,6 @@ Before initial release
 
 Possible future improvements:
 * make diamond graphics more crisp
-* no need to suffix JS files that are built into a single suffixed JS file...
 * Use Compass for instead of manually CSS property prefixing
 * sanity check in IE8
 * add "software engineer + interaction design" to logo somewhere
