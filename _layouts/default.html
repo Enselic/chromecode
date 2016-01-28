@@ -57,7 +57,7 @@
     {% if page.nav == nav_title %}
         {% assign extra_class = "active" %}
     {% endif %}
-                    <span class="nav-entry h1 {{ extra_class }}"><a href="{{ nav_url }}">{{ nav_title }}</a></span>
+                    <span class="nav-entry {{ extra_class }}"><a href="{{ nav_url }}">{{ nav_title }}</a></span>
 {% endfor %}
                 </div>
             </nav>

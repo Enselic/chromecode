@@ -5,8 +5,8 @@ for f in _scss/*; do sass $f --style compressed > _includes/$(basename ${f%%.*}.
 */
 
 /* todo move to bootstrap configuration */
-h1, h2, h3, h4, h5, h6 {
-	font-family: serif;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	font-family: Georgia, serif;
 }
 
 html.js .javascript-disabled-warning {
