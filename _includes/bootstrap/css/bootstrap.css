@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=f614fe64bff70bcffcfe)
- * Config saved to config.json and https://gist.github.com/f614fe64bff70bcffcfe
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=4be14d18936c265160ec)
+ * Config saved to config.json and https://gist.github.com/4be14d18936c265160ec
  */
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -234,7 +234,7 @@ a {
 a:hover,
 a:focus {
   color: #3175af;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
@@ -311,10 +311,10 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: Georgia, serif;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: #5c9bd1;
 }
 h1 small,
 h2 small,
