@@ -4,15 +4,31 @@ for f in _scss/*; do sass $f --style compressed > _includes/$(basename ${f%%.*}.
 
 */
 
+$nav-active-color: #49483e;
+
 nav {
     margin-bottom: 60px;
 }
 
 .nav-entry {
     padding: 5px 15px;
-    background: #49483e;
+    transition: background 1s;
+    border-bottom: 5px solid $nav-active-color;
+    border-radius: 2px;
     line-height: 200%;
-}        
+}
+
+.nav-entry:hover {
+    background: darken($nav-active-color, 7%) !important;
+}
+
+.nav-entry a {
+    text-decoration: none;
+}
+
+.nav-entry.active {
+    background: $nav-active-color;
+}
 
 /* col-xs */
 .nav-entry {

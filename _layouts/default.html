@@ -48,9 +48,17 @@
 
             <nav class="row">
                 <div class="col-12 text-center">
-                    <span class="nav-entry h1"><a href="/">Blog</a></span>
-                    <span class="nav-entry h1"><a href="/projects">Projects</a></span>
-                    <span class="nav-entry h1"><a href="/about">About</a></span>
+{% assign nav_pages = "Blog:/,Projects:/projects,About:/about" | split: "," %}
+{% for nav_page in nav_pages %}
+    {% assign nav_parts = nav_page | split: ":" %}
+    {% assign nav_title = nav_parts[0] %}
+    {% assign nav_url = nav_parts[1] %}
+    {% assign extra_class = "" %}
+    {% if page.nav == nav_title %}
+        {% assign extra_class = "active" %}
+    {% endif %}
+                    <span class="nav-entry h1 {{ extra_class }}"><a href="{{ nav_url }}">{{ nav_title }}</a></span>
+{% endfor %}
                 </div>
             </nav>
 
