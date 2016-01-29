@@ -10,10 +10,12 @@ nav: Blog
 <article class="blog-entry">
     <header>
         <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-        <h5>{{post.date|date:"%b %d, %Y"}} by {{post.author}}</h5>
+    	<h5 class="author-and-date">{{post.date|date:"%b %d, %Y"}} by {{post.author}}</h5>
     </header>
     
-    <section class="content collapsed fade-last-line">{{ post.content }}</section>
+    <section class="content collapsed fade-last-line">
+    	{{ post.content }}
+    </section>
 
     <a class="expand">Expand</a><a data-disqus-identifier="{{ post.id }}" href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a>
 
