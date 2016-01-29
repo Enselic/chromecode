@@ -2,24 +2,13 @@ define(['jquery'], function($) {
     'use strict';
 
     $(".blog-entry .expand").each(function() {
-        $(this).click(function(){
-            var toExpandOrCollapse = $(this).prev("section");
-            if (toExpandOrCollapse.is(':animated')) {
-                return;
-            }
-            var fadeLastLineAtEndOfAnimation = false;
-            if (toExpandOrCollapse.hasClass('blog-entry-content-collapsed')) {
-                $(this).html('Collapse');
-                toExpandOrCollapse.removeClass("fade-last-line");
-            } else {
-                $(this).html('Expand');
-                fadeLastLineAtEndOfAnimation = true;
-            }
+        $(this).one('click', function(){
+            var toExpand = $(this).prevAll(".content");
 
             // Measure sizes to animate between
-            var heightBefore = $(toExpandOrCollapse).height();
-            toExpandOrCollapse.toggleClass('blog-entry-content-collapsed');
-            var heightAfter = $(toExpandOrCollapse).height();
+            var heightBefore = $(toExpand).height();
+            toExpand.removeClass('blog-entry-content-collapsed');
+            var heightAfter = $(toExpand).height();
             var diff = Math.abs(heightAfter - heightBefore);
 
             // Make expand animation speed independent of blog post length
@@ -27,13 +16,13 @@ define(['jquery'], function($) {
             var animLengthInMs = diff / pixelsPerSecond * 1000;
 
             // Set up initial size and animate
-            toExpandOrCollapse.height(heightBefore);
-            toExpandOrCollapse.animate({height: heightAfter}, animLengthInMs, function(){
-                toExpandOrCollapse.css('height', '');
-                if (fadeLastLineAtEndOfAnimation) {
-                    toExpandOrCollapse.addClass("fade-last-line");
-                }
+            toExpand.height(heightBefore);
+            toExpand.animate({height: heightAfter}, animLengthInMs, function(){
+                toExpand.css('height', '');
+                toExpand.removeClass('fade-last-line')
             });
+
+            $(this).css('visibility', 'hidden');
         });
     });
 });
