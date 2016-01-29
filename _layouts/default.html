@@ -46,8 +46,7 @@
                 <!--span>a software engineer who likes interaction design</span>-->
             </header>
 
-            <nav class="row">
-                <div class="text-center">
+            <nav class="row text-center">
 {% assign nav_pages = "Blog:/,Projects:/projects,About:/about" | split: "," %}
 {% for nav_page in nav_pages %}
     {% assign nav_parts = nav_page | split: ":" %}
@@ -57,9 +56,8 @@
     {% if page.nav == nav_title %}
         {% assign extra_class = "active" %}
     {% endif %}
-                    <span class="nav-entry {{ extra_class }}"><a href="{{ nav_url }}">{{ nav_title }}</a></span>
+                <span class="nav-entry {{ extra_class }}"><a href="{{ nav_url }}">{{ nav_title }}</a></span>
 {% endfor %}
-                </div>
             </nav>
 
             <div class="row">
