@@ -10,13 +10,22 @@ $blog-content-line-height: 22.85714286px; /* bootstrap font-size-base * line-hei
     margin-bottom: 50px;
 }
 
-.blog-entry-content {
+.blog-entry header {
+    margin-bottom: 15px;
+}
+
+.blog-entry header h2 {
+    margin-bottom: 0;
+}
+
+.blog-entry header h5 {
+    color: #666;
+    margin: 0;
+}
+
+.blog-entry .content {
     position: relative;
     overflow: hidden;
-    transition: height 1s;
-    transition: opacity 1s;
-    opacity: 100%;
-    height: auto;
 }
 
 html.js .fade-last-line:after {
@@ -27,15 +36,20 @@ html.js .fade-last-line:after {
     bottom: 0%;
     height: $blog-content-line-height;
     right: 0%;
-    z-index: 10000;
+    z-index: 999;
 
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#272822+0,272822+100&0+0,1+75,1+100 */
-    background: -moz-linear-gradient(top, rgba(39,40,34,0) 0%, rgba(39,40,34,1) 75%, rgba(39,40,34,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(39,40,34,0) 0%,rgba(39,40,34,1) 75%,rgba(39,40,34,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(39,40,34,0) 0%,rgba(39,40,34,1) 75%,rgba(39,40,34,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#272822+0,272822+100&0+0,0+40,1+60,1+100 */
+    background: -moz-linear-gradient(top, rgba(39,40,34,0) 0%, rgba(39,40,34,0) 40%, rgba(39,40,34,1) 60%, rgba(39,40,34,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(39,40,34,0) 0%,rgba(39,40,34,0) 40%,rgba(39,40,34,1) 60%,rgba(39,40,34,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(39,40,34,0) 0%,rgba(39,40,34,0) 40%,rgba(39,40,34,1) 60%,rgba(39,40,34,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00272822', endColorstr='#272822',GradientType=0 ); /* IE6-9 */
 }
 
+.expand {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
 html.js .blog-entry-content-collapsed {
-    height: $blog-content-line-height * 2;
+    height: $blog-content-line-height * 3;
 }

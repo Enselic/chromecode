@@ -17,7 +17,7 @@ html.js ul.posts {
 .tag {
     position: relative;
     display: table;
-    background: darken(#e7dc6c, 0%);
+    background: lighten(#e7dc6c, 3%);
     padding: 8px 20px;
     white-space: nowrap;
     color: #333;
@@ -37,5 +37,5 @@ ul.posts>li {
 }
 
 .tag:hover {
-    background: lighten(#e7dc6c, 25%);;
+    background: white;
 }

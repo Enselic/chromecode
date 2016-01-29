@@ -7,16 +7,15 @@ nav: Blog
 ---
 
 {% for post in site.posts %}
-
         <article class="blog-entry">
             <header>
-                <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-                <span class="date"><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span> by {{post.author}}<br/> 
+                <h2><a href="{{site.baseurl}}{{post.url}}#comments">{{ post.title }}</a></h2>
+                <h5><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time> by {{post.author}}</h5>
             </header>
             
-            <section class="blog-entry-content blog-entry-content-collapsed fade-last-line">{{ post.content }}</section>
+            <section class="content blog-entry-content-collapsed fade-last-line">{{ post.content }}</section>
 
-            <h5 class="expand">Expand</h5>
+            <a class="expand">Expand</a>
+            <a href="{{site.baseurl}}{{post.url}}#comments">Comments</a>
         </article>
-
 {% endfor %}

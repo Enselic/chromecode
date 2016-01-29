@@ -9,6 +9,7 @@ Before initial release
 * Write blog post
 
 Possible future improvements:
+* add URL state about tag expand-state
 * make diamond graphics more crisp
 * Use Compass for instead of manually CSS property prefixing
 * sanity check in IE8
