@@ -2,20 +2,14 @@
 layout: default
 tag_title: Posts by tags
 by_year_title: Posts by year
-nav: Blog
 ---
 
-<article>
-        <header>
-            <h2>{{ page.title }}</h2>
-            <span><i class="icon-clock"></i><time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time></span><br/>
-            <span class="category"><i class="icon-tag"></i> {{ page.categories | category_links }}</span><br/>
-            <span class="author"><i class="icon-user"></i> {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif%}</span>
-        </header>
-
-        <div class="entry">{{ content }}</div>
-
-        <footer><!-- additional info --></footer>
+<article class="blog-entry">
+    <header>
+        <h2><a href="{{site.baseurl}}{{post.url}}">{{ page.title }}</a></h2>
+        <h5>{{page.date|date:"%b %d, %Y"}} by {{page.author}}</h5>
+    </header>
+    
+    <section class="content">{{ page.content }}</section>
 
 </article>
-

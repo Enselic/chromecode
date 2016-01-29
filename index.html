@@ -1,20 +1,20 @@
 ---
 layout: default
-title: Martin Nordholts' Blog
+title: Martin "Enselic" Nordholts' blog and website
 tag_title: Tags
 by_year_title: Posts by year
 nav: Blog
 ---
 
 {% for post in site.posts %}
-        <article class="blog-entry">
-            <header>
-                <h2><a href="{{site.baseurl}}{{post.url}}#comments">{{ post.title }}</a></h2>
-                <h5><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time> by {{post.author}}</h5>
-            </header>
-            
-            <section class="content blog-entry-content-collapsed fade-last-line">{{ post.content }}</section>
+<article class="blog-entry">
+    <header>
+        <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
+        <h5>{{post.date|date:"%b %d, %Y"}} by {{post.author}}</h5>
+    </header>
+    
+    <section class="content collapsed fade-last-line">{{ post.content }}</section>
 
-            <a class="expand">Expand</a><a href="{{site.baseurl}}{{post.url}}#comments">Comments</a>
-        </article>
+    <a class="expand">Expand</a><a href="{{site.baseurl}}{{post.url}}#comments">Comments</a>
+</article>
 {% endfor %}

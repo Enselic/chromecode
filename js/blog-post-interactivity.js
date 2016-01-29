@@ -7,7 +7,7 @@ define(['jquery'], function($) {
 
             // Measure sizes to animate between
             var heightBefore = $(toExpand).height();
-            toExpand.removeClass('blog-entry-content-collapsed');
+            toExpand.removeClass('collapsed');
             var heightAfter = $(toExpand).height();
             var diff = Math.abs(heightAfter - heightBefore);
 
@@ -18,6 +18,7 @@ define(['jquery'], function($) {
             // Set up initial size and animate
             toExpand.height(heightBefore);
             toExpand.animate({height: heightAfter}, animLengthInMs, function(){
+                toExpand.css('height', '')
                 toExpand.removeClass('fade-last-line')
             });
 
