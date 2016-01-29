@@ -18,12 +18,11 @@ define(['jquery'], function($) {
             // Set up initial size and animate
             toExpand.height(heightBefore);
             toExpand.animate({height: heightAfter}, animLengthInMs, function(){
-                toExpand.css('height', '');
                 toExpand.removeClass('fade-last-line')
             });
 
             $(this).css('visibility', 'hidden');
-            $(this).animate({width: 0, paddingRight: 0}, 2000);
+            $(this).animate({width: 0, paddingRight: 0}, 350);
         });
     });
 });
