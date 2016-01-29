@@ -12,7 +12,7 @@ define(['jquery'], function($) {
             var diff = Math.abs(heightAfter - heightBefore);
 
             // Make expand animation speed independent of blog post length
-            var pixelsPerSecond = 200;
+            var pixelsPerSecond = 600;
             var animLengthInMs = diff / pixelsPerSecond * 1000;
 
             // Set up initial size and animate
