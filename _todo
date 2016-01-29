@@ -3,7 +3,7 @@ To do:
 Before initial release
 * layout individual posts pages
 * make right margin nice and straight
-* add Discuss comment system
+* Debug why comment count don't always show up
 * import comments
 * add GA support, including what is clicked, expanded etc
 
