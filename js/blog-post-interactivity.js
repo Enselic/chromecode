@@ -23,6 +23,7 @@ define(['jquery'], function($) {
             });
 
             $(this).css('visibility', 'hidden');
+            $(this).animate({width: 0, paddingRight: 0}, 2000);
         });
     });
 });
