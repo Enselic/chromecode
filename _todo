@@ -2,14 +2,13 @@ To do:
 
 Before initial release
 * layout individual posts pages
+* make right margin nice and straight
 * add Discuss comment system
 * import comments
-* make right margin nice and straight
 * add GA support, including what is clicked, expanded etc
-* Write blog post
 
 Possible future improvements:
-* add URL state about tag expand-state
+* add URL state about tag expand-state	
 * make diamond graphics more crisp
 * Use Compass for instead of manually CSS property prefixing
 * sanity check in IE8
