@@ -7,10 +7,14 @@ by_year_title: Posts by year
 <article class="blog-entry">
     <header>
         <h2><a href="{{site.baseurl}}{{post.url}}">{{ page.title }}</a></h2>
-        <h5>{{page.date|date:"%b %d, %Y"}} by {{page.author}}</h5>
+        <h5 class="author-and-date">{{page.date|date:"%b %d, %Y"}} by {{page.author}}</h5>
     </header>
     
     <section class="content">{{ page.content }}</section>
+
+{% for tag in page.tags %}
+		<a class="tag post-list-header">{{ tag }}</a>
+{% endfor %}
 
     <div id="disqus_thread"></div>
     <script>
