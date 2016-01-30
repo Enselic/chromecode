@@ -91,10 +91,12 @@
     {% assign postYear = post.date | date: "%Y" %}
 
     {% if postYear != headerYear %}
-        {% assign headerYear = postYear %}
         {% if headerYear != -1 %}
-                    </ul>
+                        </ul>
+                    </div>
         {% endif %}
+        
+        {% assign headerYear = postYear %}
 
         {% assign postsThisYear = 0 %}
         {% for post in site.posts %}
@@ -108,12 +110,14 @@
         {% if tagCountClass > 10 %}
             {% assign tagCountClass = 10 %}
         {% endif %}
-                    <a class="tag post-list-header tag-size-for-nbr-of-posts-{{ tagCountClass }}">{{ postYear }}</a>  × {{ postsThisYear }} <br/>
-                    <ul class="h4 posts">
+                    <div class="tag-container">
+                        <a class="tag tag-size-{{ tagCountClass }} post-list-header">{{ postYear }}</a> <span class="tag-count"> × {{ postsThisYear }}</span><br/>
+                        <ul class="h4 post-list">
     {% endif %}
-                        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% if forloop.last %}
-                    </ul>
+                        </ul>
+                    </div>
     {% endif %}
 {% endfor %}
                 </aside>
