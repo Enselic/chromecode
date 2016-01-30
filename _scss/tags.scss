@@ -10,8 +10,9 @@ html.js .post-list {
 
 .tag {
     display: inline-block;
-    margin: 7px;
+    margin: 7px 0;
     padding: 8px 20px;
+    font-size: 14px;
     color: #333;
     cursor: pointer;
 
@@ -50,6 +51,7 @@ html.js .post-list {
 }
 
 .tag:hover {
+    color: #333;
     background: white;
 }
 

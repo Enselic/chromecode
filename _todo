@@ -1,11 +1,10 @@
 To do:
 
 Before initial release
-* layout individual posts pages, add tags
-* add tag coun to tags
-* make right margin nice and straight
 * import comments
 * add GA support, including what is clicked, expanded etc
+* show images in front page for posts that have them
+* make post-page tags tab-like i.e. show active tag posts below all tags
 
 Possible future improvements:
 * add URL state about tag expand-state	
