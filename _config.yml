@@ -14,7 +14,7 @@ url: https://setofskills.com/
 permalink: pretty
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.md, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, 'chromecode.sublime-project', 'chromecode.sublime-workspace']
+exclude: [README.md, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, build.js, node_modules, 'chromecode.sublime-project', 'chromecode.sublime-workspace']
 
 defaults:
   -

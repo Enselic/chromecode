@@ -1,3 +1,9 @@
+/*
+
+node_modules/requirejs/bin/r.js -o build.js
+
+*/
+
 requirejs.config({
     shim: {
         "jquery.lazyload": ["jquery"]

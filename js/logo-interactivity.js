@@ -224,16 +224,17 @@ define(['jquery'], function($) {
     $('.logo-container > img').each(function() {
         var pendulum = new PendulumSquare($(this));
         rotatingParts.push(pendulum);
+    });
 
-        $(this).on('mousedown touchstart', function(e) {
-            // Prevent mousedown from triggering later
-            if (e.type === 'touchstart') $(this).off('mousedown');
+    $('.logo-container').on('mousedown touchstart', function(e) {
+        console.log('sdfsdfdsf');
+        // Prevent mousedown from triggering later
+        if (e.type === 'touchstart') $(this).off('mousedown');
 
-            rotatingParts.forEach(function(rotatingPart) {
-                rotatingPart.kickstartRotation();
-            });
-            animationController.ensureRunning();
+        rotatingParts.forEach(function(rotatingPart) {
+            rotatingPart.kickstartRotation();
         });
+        animationController.ensureRunning();
     });
 
     var animationController = new AnimationController(window);
