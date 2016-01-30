@@ -25,11 +25,20 @@ html.js ul.posts {
     transition: background 0.4s;
 }
 
-ul.posts {
+.post-list .inner-header {
+    margin: 0;
+    padding-left: 40px;
+}
+.post-list.expanded {
+    background: #333;
+    border-radius: 2px;
+}
+
+.post-list ul {
     margin-top: 0;
 }
 
-ul.posts>li {
+.post-list li {
     /* Using margin makes slideToggle() animation buggy */
     padding-bottom: 15px;
 }
