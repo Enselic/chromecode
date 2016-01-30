@@ -25,6 +25,10 @@ html.js ul.posts {
     transition: background 0.4s;
 }
 
+ul.posts {
+    margin-top: 0;
+}
+
 ul.posts>li {
     /* Using margin makes slideToggle() animation buggy */
     padding-bottom: 15px;
