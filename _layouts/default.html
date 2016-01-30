@@ -67,7 +67,7 @@
 
                 </section>
 
-                <aside class="col-xs-12 col-sm-5 col-lg-4">
+                <aside class="col-xs-12 col-sm-5 col-lg-4 tags">
 {% for tag in site.tags %}
     {% assign tagCount = tag[1].size %}
     {% assign tagCountClass = tag[1].size %}
@@ -95,7 +95,7 @@
                         </ul>
                     </div>
         {% endif %}
-        
+
         {% assign headerYear = postYear %}
 
         {% assign postsThisYear = 0 %}
