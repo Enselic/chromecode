@@ -74,10 +74,9 @@
     {% if tagCountClass > 10 %}
         {% assign tagCountClass = 10 %}
     {% endif %}
-                    <a class="tag post-list-header tag-size-for-nbr-of-posts-{{ tagCountClass }}">{{ tag[0] }}</a> × {{ tagCount }} <br/>
-                    <div class="post-list expanded">
-                        <p class="inner-header">Posts tagged {{ tag[0] }}:</p>
-                        <ul class="h4">
+                    <div class="tag-container">
+                        <a class="tag tag-size-{{ tagCountClass }} post-list-header">{{ tag[0] }}</a><span class="tag-count"> × {{ tagCount }}</span> <br/>
+                        <ul class="h4 post-list">
     {% for post in tag[1] %}
                             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}

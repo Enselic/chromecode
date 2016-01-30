@@ -4,7 +4,7 @@ for f in _scss/*; do sass $f --style compressed > _includes/$(basename ${f%%.*}.
 
 */
 
-html.js ul.posts {
+html.js .post-list {
     display: none;
 }
 
@@ -25,17 +25,23 @@ html.js ul.posts {
     transition: background 0.4s;
 }
 
-.post-list .inner-header {
-    margin: 0;
-    padding-left: 40px;
-}
-.post-list.expanded {
+.tag-container.expanded {
     background: #333;
+}
+
+.tag-container.expanded .tag-count {
+    display: none;
+}
+
+.tag-container {
+    background: transparent;
+    transition: background 0.4s;
     border-radius: 2px;
 }
 
-.post-list ul {
+.post-list {
     margin-top: 0;
+    margin-bottom: 30px;
 }
 
 .post-list li {
@@ -51,7 +57,7 @@ $base: 14px;
 $step: 1.3px;
 
 @for $i from 1 through 10 {
-    .tag-size-for-nbr-of-posts-#{$i} {
+    .tag-size-#{$i} {
         font-size: $base + $i * $step;
     }
 }
