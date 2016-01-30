@@ -6,7 +6,7 @@ by_year_title: Posts by year
 
 <article class="blog-entry">
     <header>
-        <h2><a href="{{site.baseurl}}{{post.url}}">{{ page.title }}</a></h2>
+        <h2><a href="{{site.baseurl}}{{post.url}}">{{ page.title }}  {{ page.cached_comment_count }}</a></h2>
         <h5 class="author-and-date">{{page.date|date:"%b %d, %Y"}} by {{page.author}}</h5>
     </header>
     
@@ -25,6 +25,8 @@ by_year_title: Posts by year
 {% endfor %}
 	</section>
 
+    <a href="/">← Back to all blog posts</a>
+
     <div id="disqus_thread"></div>
     <script>
 		var disqus_config = function () {
@@ -39,6 +41,4 @@ by_year_title: Posts by year
 		})();
 	</script>
 	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-    <a href="/">Back to all blog posts</a>
 </article>

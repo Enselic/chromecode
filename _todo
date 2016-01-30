@@ -1,9 +1,10 @@
 To do:
 
 Before initial release
-* import comments
+* cache comment count
 * add GA support, including what is clicked, expanded etc
 * show images in front page for posts that have them
+* make fonts async
 * make post-page tags tab-like i.e. show active tag posts below all tags
 
 Possible future improvements:
