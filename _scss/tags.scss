@@ -33,3 +33,12 @@ ul.posts>li {
 .tag:hover {
     background: white;
 }
+
+$base: 14px;
+$step: 1.3px;
+
+@for $i from 1 through 10 {
+    .tag-size-for-nbr-of-posts-#{$i} {
+        font-size: $base + $i * $step;
+    }
+}
