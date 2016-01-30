@@ -12,9 +12,16 @@ by_year_title: Posts by year
     
     <section class="content">{{ page.content }}</section>
 
+	<section class="tags-in-post">
 {% for tag in page.tags %}
-		<a class="tag post-list-header">{{ tag }}</a>
+		<a class="tag post-list-header">{{ tag }}</a> <br/>
+    	<ul class="h4 posts">
+    {% for post in site.tags[tag] %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+        </ul>		
 {% endfor %}
+	</section>
 
     <div id="disqus_thread"></div>
     <script>
