@@ -82,6 +82,7 @@
                     </ul>
 {% endfor %}
 
+        <br/>
 {% assign headerYear = -1 %}
 {% for post in site.posts %}   
     {% assign postYear = post.date | date: "%Y" %}
@@ -91,7 +92,20 @@
         {% if headerYear != -1 %}
                     </ul>
         {% endif %}
-                    <a class="tag post-list-header">{{ postYear }}</a>  <br/>
+        
+        {% assign postsThisYear = 0 %}
+        {% for post in site.posts %}
+            {% assign tmpPostYear = post.date | date: "%Y" %}
+            {% if tmpPostYear == headerYear %}
+                {% assign postsThisYear = postsThisYear | plus: 1 %}
+            {% endif %} 
+        {% endfor %}
+
+        {% assign tagCountClass = postsThisYear %}
+        {% if tagCountClass > 10 %}
+            {% assign tagCountClass = 10 %}
+        {% endif %}
+                    <a class="tag post-list-header tag-size-for-nbr-of-posts-{{ tagCountClass }}">{{ postYear }}</a>  × {{ postsThisYear }} <br/>
                     <ul class="h6 posts">
     {% endif %}
                         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
