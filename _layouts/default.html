@@ -67,10 +67,10 @@
 
                 </section>
 
-                <aside class="col-xs-12 col-sm-5 col-lg-4 tags">
+                <aside class="col-xs-12 col-sm-5 col-lg-4">
                     <h3>{{ page.tag_title }}:</h3>
 {% for tag in site.tags %}
-                    <a class="tag post-list-header">{{ tag[0] }}</a> <br/>
+                    <a class="tag post-list-header">{{ tag[0] }}</a> × {{ tag[1].size }} <br/>
                     <ul class="h4 posts">
     {% for post in tag[1] %}
                         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
