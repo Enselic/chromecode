@@ -3,7 +3,7 @@ define(['jquery'], function($) {
 
     $(".post-list-header").each(function() {
         $(this).click(function(){
-            $(this).next("ul.posts").slideToggle();
+            $(this).nextAll("ul.posts:first").slideToggle();
         });
     });
 });
