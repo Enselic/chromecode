@@ -39,18 +39,19 @@ $logo-reference-width: 290px;
     animation-duration: 0.4s;        
 }
 
+$glimmer-start-delay: 1s;
 @mixin scalable-logo-graphics($logo-width) {
     img[src="/img/diamond-large.png"] {
         @include diamond-large($logo-width);
-        @include glimmerStarter(0.65s);
+        @include glimmerStarter($glimmer-start-delay + 0.15s);
     }
     img[src="/img/diamond-medium.png"] {
         @include diamond-medium($logo-width);
-        @include glimmerStarter(0.5s);
+        @include glimmerStarter($glimmer-start-delay);
     }
     img[src="/img/diamond-small.png"] {
         @include diamond-small($logo-width);
-        @include glimmerStarter(0.8s);
+        @include glimmerStarter($glimmer-start-delay + 0.3s);
     }
     .logo-container {
         width: $logo-width;
