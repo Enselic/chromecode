@@ -57,6 +57,9 @@ $logo-reference-width: 290px;
         margin-top: logo-scale($logo-width) * 200px;
         margin-right: logo-scale($logo-width) * -30px;
     }
+    .logo-text .space {
+        font-size: logo-scale($logo-width) * 40px;
+    }
 }
 
 /* For when the text is to the right of the logo */
@@ -104,9 +107,10 @@ $logo-reference-width: 290px;
 
 .logo-text {
     position: relative;
-    font-family: 'Lobster', sans-serif;
+    font-family: "Courier New", Courier, monospace;
     top: 0px;
     font-size: 40px;
+    font-weight: 900;
 }
 
 /* between col-xs and col-sm */
