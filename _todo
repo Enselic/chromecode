@@ -1,7 +1,6 @@
 To do:
 
 Before initial release
-* cache comment count
 * add GA support, including what is clicked, expanded etc
 * show images in front page for posts that have them
 * make post-page tags tab-like i.e. show active tag posts below all tags
@@ -13,8 +12,5 @@ Possible future improvements:
 * sanity check in IE8
 * add "software engineer + interaction design" to logo somewhere
 * add build instructions
-* add build scripts, e.g. to autosuffix proper files with md5 hash
-* add background to logo
-* make navbar stay on top on mobile when scrolled down
-* Animate the faded line when blog post expands, and the 'Collapse' to 'Expand' animation
+* add build scripts for e.g. main-built-*.js
 * add noscript-variants of lazyloaded imgs
