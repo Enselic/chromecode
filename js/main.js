@@ -10,6 +10,6 @@ requirejs.config({
     }
 });
 
-requirejs(['jquery', 'jquery.lazyload', 'logo-interactivity', 'blog-post-interactivity', 'tags-interactivity'], function($) {
+requirejs(['jquery', 'jquery.lazyload', 'logo-interactivity', 'blog-post-interactivity', 'tags-interactivity', 'fonts-async'], function($) {
     $('img.img-responsive').lazyload();
 });
