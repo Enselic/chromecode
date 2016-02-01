@@ -45,13 +45,28 @@ html.js .fade-last-line:after {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00272822', endColorstr='#272822',GradientType=0 ); /* IE6-9 */
 }
 
+.content img {
+    max-height: $blog-content-line-height * 3.5;
+    width: auto;
+    float: left;
+    margin-right: $blog-content-line-height / 2;
+}
+
+.back-link {
+    margin-top: 10px;
+}
+
+.content {
+    position: relative;
+}
+
 .expand {
     cursor: pointer;
     padding-right: 15px;
 }
 
 html.js .blog-entry .collapsed {
-    height: $blog-content-line-height * 3;
+    height: $blog-content-line-height * 4;
 }
 
 #disqus_thread {
