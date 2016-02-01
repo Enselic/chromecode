@@ -35,3 +35,6 @@ defaults:
       type: "posts"
     values:
       by_year_title: Posts by year
+
+sass:
+  style: compressed

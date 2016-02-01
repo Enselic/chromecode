@@ -8,12 +8,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <style>
-        {% include bootstrap/css/bootstrap.min.css %}
-        {% include logo.min.css %}
-        {% include nav.min.css %}
-        {% include tags.min.css %}
-        {% include global.min.css %}
-        {% include blog-entry.min.css %}
+        {% capture to_scssify %}
+            {% include bootstrap/css/bootstrap.min.css %}
+            {% include logo.min.css %}
+            {% include nav.min.css %}
+            {% include tags.min.css %}
+            {% include global.min.css %}
+            {% include blog-entry.min.css %}
+        {% endcapture %}
+        {{ to_scssify | scssify }}
         </style>
     </head>
     <body>
