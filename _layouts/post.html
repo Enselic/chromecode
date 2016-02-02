@@ -4,13 +4,13 @@ tag_title: Posts by tags
 by_year_title: Posts by year
 ---
 
-<article class="blog-entry">
+<article class="blog-entry full-page">
     <header>
         <h2><a href="{{site.baseurl}}{{post.url}}">{{ page.title }}</a></h2>
         <h5 class="author-and-date">{{page.date|date:"%b %d, %Y"}} by {{page.author}}</h5>
     </header>
     
-    <section class="content">{{ page.content }}</section>
+    <section class="content">{{ page.content | replace:'<img','<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAC0lEQVQI12NgwAUAABoAASRETuUAAAAASUVORK5CYII="' }} </section>
 
 	<section class="tags-in-post">
 {% for tag in page.tags %}
@@ -29,7 +29,7 @@ by_year_title: Posts by year
 		<p><a href="/">← Back to all blog posts</a></p>
 	</section>
 
-    <div id="disqus_thread"></div>
+    <!--div id="disqus_thread"></div>
     <script>
 		var disqus_config = function () {
 		this.page.url = 'https://setofskills.com{{page.url}}';
@@ -42,5 +42,5 @@ by_year_title: Posts by year
 			(d.head || d.body).appendChild(s);
 		})();
 	</script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript-->
 </article>

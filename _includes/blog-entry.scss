@@ -45,19 +45,27 @@ html.js .fade-last-line:after {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00272822', endColorstr='#272822',GradientType=0 ); /* IE6-9 */
 }
 
-.content img {
-    max-height: $blog-content-line-height * 3.5;
-    width: auto;
+.blog-entry.front-page img {
+    display: block;
     float: left;
-    margin-right: $blog-content-line-height;
+    overflow: hidden;
+
+    width: $blog-content-line-height * 3.5 * 1.61803398;
+    height: $blog-content-line-height * 3.5;
+
+    margin-right: $blog-content-line-height * 0.5;
+    margin-bottom: 0;
+}
+
+.blog-entry.full-page img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 11px;
 }
 
 .back-link {
     margin-top: 10px;
-}
-
-.content {
-    position: relative;
 }
 
 .expand {
