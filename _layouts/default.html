@@ -83,7 +83,9 @@
         {% assign tagCountClassCount = 10 %}
     {% endif %}
                     <div class="tag-container">
-                        {% include tag.html tagName='{{tag[0]}}' tagCount='{{tagCount}}' extraClasses='tag-count-{{tagCountClassCount}}' %}
+    {% assign tagCountClass = 'tag-size-' | append: tagCountClassCount%}
+    {% assign tagNameEvaluated = tag[0]%}
+    {% include tag.html tagName=tagNameEvaluated tagCount=tagCount extraClasses=tagCountClass %}
                         <ul class="h4 post-list">
     {% for post in tag[1] %}
                             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
@@ -119,7 +121,8 @@
             {% assign tagCountClassCount = 10 %}
         {% endif %}
                     <div class="tag-container">
-                        {% include tag.html tagName='{{postYear}}' tagCount='{{postsThisYear}}' extraClasses='tag-size-{{tagCountClassCount}}' %}
+        {% assign tagCountClass = 'tag-size-' | append: tagCountClassCount %}
+        {% include tag.html tagName=postYear tagCount=postsThisYear extraClasses=tagCountClass %}
                         <ul class="h4 post-list">
     {% endif %}
                             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
