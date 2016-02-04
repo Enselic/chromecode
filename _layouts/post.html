@@ -15,9 +15,7 @@ by_year_title: Posts by year
 	<section class="tags-in-post">
 {% for tag in page.tags %}
         <div class="tag-container">
-            <a class="tag {% if include tag-size-{{ tagCountClass }} post-list-header">{{ postYear }}</a> <span class="tag-count"> × {{ postsThisYear }}</span><br/>
-
-            <a class="tag post-list-header">{{ tag }}</a>
+    {% include tag.html tagName='postYear' %}
             <ul class="h4 post-list">
     {% for post in site.tags[tag] %}
 	            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
