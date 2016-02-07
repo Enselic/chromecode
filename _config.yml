@@ -13,6 +13,8 @@ url: https://setofskills.com/
 # Makes pretty (descriptive) permalinks. See Jekyll docs for alternatives.
 permalink: pretty
 
+plugins_dir: _plugins
+
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.md, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, build.js, node_modules, 'chromecode.sublime-project', 'chromecode.sublime-workspace']
 

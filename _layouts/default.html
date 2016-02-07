@@ -54,6 +54,9 @@
                 <!--span>a software engineer who likes interaction design</span>-->
             </header>
 
+{% for i in site.data.nordholts %}
+                {{site.data.nordholts[0]}} <br/>
+{% endfor %}
             <nav class="row text-center">
 {% assign nav_pages = "Blog:/,Projects:/projects,About:/about" | split: "," %}
 {% for nav_page in nav_pages %}
