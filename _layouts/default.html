@@ -54,9 +54,6 @@
                 <!--span>a software engineer who likes interaction design</span>-->
             </header>
 
-{% for i in site.data.nordholts %}
-                {{site.data.nordholts[0]}} <br/>
-{% endfor %}
             <nav class="row text-center">
 {% assign nav_pages = "Blog:/,Projects:/projects,About:/about" | split: "," %}
 {% for nav_page in nav_pages %}
@@ -79,18 +76,24 @@
                 </section>
 
                 <aside class="col-xs-12 col-sm-5 col-lg-4 tags">
-{% for tag in site.tags %}
-    {% assign tagCount = tag[1].size %}
-    {% assign tagCountClassCount = tag[1].size %}
+{% for i in  %}
+                {{i}} <br/>
+{% endfor %}
+
+
+{% for tag_with_count in site.tags %}
+    {% assign tagNameEvaluated = tag_with_count[0] %}
+    {% assign tagCount = tag_with_count[1] %}
+    {% assign tagPosts = tag_with_count[2] %}
+    {% assign tagCountClassCount = tagCount %}
     {% if tagCountClassCount > 10 %}
         {% assign tagCountClassCount = 10 %}
     {% endif %}
                     <div class="tag-container">
     {% assign tagCountClass = 'tag-size-' | append: tagCountClassCount%}
-    {% assign tagNameEvaluated = tag[0]%}
     {% include tag.html tagName=tagNameEvaluated tagCount=tagCount extraClasses=tagCountClass %}
                         <ul class="h4 post-list">
-    {% for post in tag[1] %}
+    {% for post in tagPosts %}
                             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
                         </ul>
