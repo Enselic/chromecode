@@ -1,12 +1,12 @@
 module SetOfSkills
   class PreCalculations < Jekyll::Generator
     def generate(site)
-    	tag_counts = []
-    	site.tags.each_key do |tagName|
-    		tag_counts << [ tagName, site.tags[tagName].size, site.tags[tagName] ]
+    	tags_ordered_by_count = []
+    	site.tags.each do |tag, posts| {}
+    		tags_ordered_by_count << [ tag, posts.size ]
     	end
-    	tag_counts.sort_by! { |entry| entry[1] }
-    	site.data['tag_counts'] = tag_counts.reverse
+    	tags_ordered_by_count.sort_by! { |entry| entry[1] }
+    	site.data['tags_ordered_by_count'] = tags_ordered_by_count.reverse
     end
   end
 end
