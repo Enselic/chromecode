@@ -81,13 +81,8 @@
     {% assign tagCount = tag_with_count[1] %}
     {% assign tagPosts = site.tags[tagName] %}
 
-    {% assign tagCountClassCount = tagCount %}
-    {% if tagCountClassCount > 10 %}
-        {% assign tagCountClassCount = 10 %}
-    {% endif %}
                     <div class="tag-container">
-    {% assign tagCountClass = 'tag-size-' | append: tagCountClassCount%}
-    {% include tag.html tagName=tagName tagCount=tagCount extraClasses=tagCountClass %}
+    {% include tag.html tagName=tagName tagCount=tagCount %}
                         <ul class="h4 post-list">
     {% for post in tagPosts %}
                             <li><a href="{{ post.url }}">{{ post.title }}</a></li>

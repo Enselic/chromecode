@@ -61,8 +61,12 @@ html.js .post-list {
 $base: 14px;
 $step: 1.3px;
 
-@for $i from 1 through 10 {
-    .tag-size-#{$i} {
+/* Default to a big size so we don't have have to define classes for all ints > 0 */
+.tag {
+    font-size: $base + 10 * $step;
+}
+@for $i from 0 through 10 {
+    .tag[data-tag-count="#{$i}"] {
         font-size: $base + $i * $step;
     }
 }
