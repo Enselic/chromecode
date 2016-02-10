@@ -21,7 +21,7 @@ module SetOfSkills
             site.posts.docs.each do |post|
                 h[post.date.year] << post
             end
-            years = h.map { |k,v| [k, v.size, v] }
+            years = h.map { |year,posts| [year.to_s, posts.size, posts] }
             years.sort_by! { |entry| entry[0] }
             site.data['posts_by_year'] = years
         end
