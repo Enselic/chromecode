@@ -58,7 +58,19 @@ html.js .post-list {
     background: white;
 }
 
-$base: 14px;
+.tags h6 {
+    margin: 0 0 10px 0;
+    color: #ccc;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.tags h4 {
+    margin: 0;
+    color: white;
+}
+
+$base: 18.6px;
 $step: 1.3px;
 
 /* Default to a big size so we don't have have to define classes for all ints > 0 */

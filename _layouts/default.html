@@ -76,14 +76,15 @@
                 </section>
 
                 <aside class="col-xs-12 col-sm-5 col-lg-4 tags">
+
+                    <h6>posts by tag</h6>
 {% for tag_with_count in site.data.tags_ordered_by_count %}
     {% assign tagName = tag_with_count[0] %}
     {% assign tagCount = tag_with_count[1] %}
     {% assign tagPosts = site.tags[tagName] %}
-
                     <div class="tag-container">
     {% include tag.html tagName=tagName tagCount=tagCount %}
-                        <ul class="h4 post-list">
+                        <ul class="h5 post-list">
     {% for post in tagPosts %}
                             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
@@ -93,14 +94,14 @@
 
                     <br/>
 
+                    <h6>posts by year</h6>
 {% for entry in site.data.posts_by_year %}
     {% assign postYear = entry[0] %}
     {% assign postsThisYear = entry[1] %}
     {% assign posts = entry[2] %}
-
                     <div class="tag-container">
-                        <h3>{{postYear}} × {{postsThisYear}}</h3> 
-                        <ul class="h4 p2ost-list">
+                        <h4>{{postYear}}</h4> 
+                        <ul class="h5 p2ost-list">
     {% for post in posts %}
                             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
