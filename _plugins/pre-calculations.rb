@@ -1,7 +1,10 @@
+require 'date'
+
 module SetOfSkills
     class PreCalculations < Jekyll::Generator
         def generate(site)
             generate_tags_ordered_by_count site
+            generate_posts_by_year site
         end
 
         def generate_tags_ordered_by_count(site)
@@ -14,14 +17,13 @@ module SetOfSkills
         end
 
         def generate_posts_by_year(site)
-            h = Hash.new { |k,v| h[k] = [] }
-            site.posts.each do |post|
-                h[Date.parse(post.date).year] << post
+            h = Hash.new { |hash, key| hash[key] = [] }
+            site.posts.docs.each do |post|
+                h[post.date.year] << post
             end
             years = h.map { |k,v| [k, v.size, v] }
-            years.sort_by! { |entry| entry[1] }
+            years.sort_by! { |entry| entry[0] }
             site.data['posts_by_year'] = years
         end
     end
 end
-
