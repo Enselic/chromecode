@@ -23,7 +23,7 @@ module SetOfSkills
             end
             years = h.map { |year,posts| [year.to_s, posts.size, posts] }
             years.sort_by! { |entry| entry[0] }
-            site.data['posts_by_year'] = years
+            site.data['posts_by_year'] = years.reverse
         end
     end
 end
