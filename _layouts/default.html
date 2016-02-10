@@ -99,8 +99,8 @@
     {% assign posts = entry[2] %}
 
                     <div class="tag-container">
-    {% include tag.html tagName=postYear tagCount=postsThisYear %}
-                        <ul class="h4 post-list">
+                        <h3>{{postYear}} × {{postsThisYear}}</h3> 
+                        <ul class="h4 p2ost-list">
     {% for post in posts %}
                             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
