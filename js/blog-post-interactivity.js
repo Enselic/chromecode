@@ -1,7 +1,7 @@
 define(['jquery'], function($) {
     'use strict';
 
-    $(".blog-entry .google-tag-manager-expand").each(function() {
+    $(".blog-post .google-tag-manager-read-more-button").each(function() {
         $(this).one('click', function(){
             var toExpand = $(this).prevAll(".content");
 

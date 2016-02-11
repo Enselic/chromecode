@@ -6,24 +6,24 @@ for f in _scss/*; do sass $f --style compressed > _includes/$(basename ${f%%.*}.
 
 $blog-content-line-height: 22.85714286px; /* bootstrap font-size-base * line-height-base */
 
-.blog-entry {
+.blog-post {
     margin-bottom: 50px;
 }
 
-.blog-entry header {
+.blog-post header {
     margin-bottom: 15px;
 }
 
-.blog-entry header h2 {
+.blog-post header h2 {
     margin-bottom: 0;
 }
 
-.blog-entry .author-and-date {
+.blog-post .author-and-date {
     color: #666;
     margin: 0;
 }
 
-.blog-entry .content {
+.blog-post .content {
     position: relative;
     overflow: hidden;
 }
@@ -45,7 +45,7 @@ html.js .fade-last-line:after {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00272822', endColorstr='#272822',GradientType=0 ); /* IE6-9 */
 }
 
-.blog-entry.front-page img {
+.blog-post.front-page img {
     display: block;
     float: left;
     overflow: hidden;
@@ -57,7 +57,7 @@ html.js .fade-last-line:after {
     margin-bottom: 0;
 }
 
-.blog-entry.full-page img {
+.blog-post.full-page img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -73,7 +73,7 @@ html.js .fade-last-line:after {
     padding-right: 15px;
 }
 
-html.js .blog-entry .collapsed {
+html.js .blog-post .collapsed {
     height: $blog-content-line-height * 4;
 }
 
