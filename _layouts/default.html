@@ -12,9 +12,9 @@
         {% capture to_scssify %}
             {% include logo.scss %}
             {% include nav.scss %}
-            {% include tags.scss %}
+            {% include tags-and-years.scss %}
             {% include global.scss %}
-            {% include blog-entry.scss %}
+            {% include blog-post.scss %}
         {% endcapture %}
         {{ to_scssify | scssify }}
         </style>
