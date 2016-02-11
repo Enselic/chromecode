@@ -7,7 +7,7 @@ aside.tags {
     margin-top: 15px;
 }
 
-html.js .post-list {
+html.js .posts-by-tag .post-list {
     display: none;
 }
 
@@ -44,8 +44,8 @@ html.js .post-list {
 }
 
 .post-list {
-    margin-top: 0;
-    margin-bottom: 30px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .post-list li {
@@ -54,7 +54,12 @@ html.js .post-list {
 }
 
 .posts-by-year {
-    margin-top: 80px;
+    margin-top: 45px;
+}
+
+.posts-by-tag h6 {
+    color: green;
+    margin: 0 0 8px 0;
 }
 
 .tag:hover {
@@ -63,19 +68,24 @@ html.js .post-list {
 }
 
 .tags h6 {
-    margin: 0;
     color: #ccc;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif
 }
 
-.tags h3 {
+.posts-by-year h3 {
     margin: 0;
     color: white;
 }
 
-$base: 18.6px;
-$step: 1.3px;
+.posts-by-year h6 {
+    margin: 0;
+    position: relative;
+    top: 25px;
+}
+
+$base: 18px;
+$step: 1px;
 
 /* Default to a big size so we don't have have to define classes for all ints > 0 */
 .tag {
