@@ -24,7 +24,7 @@
     "@font-size-large": "ceil((@font-size-base * 1.25))",
     "@font-size-small": "ceil((@font-size-base * 0.85))",
     "@font-size-h1": "floor((@font-size-base * 2.6))",
-    "@font-size-h2": "floor((@font-size-base * 2.15))",
+    "@font-size-h2": "floor((@font-size-base * 2.0))",
     "@font-size-h3": "ceil((@font-size-base * 1.7))",
     "@font-size-h4": "ceil((@font-size-base * 1.25))",
     "@font-size-h5": "@font-size-base",
@@ -387,5 +387,5 @@
     "responsive-utilities.less"
   ],
   "js": [],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=e9735755cb086c720529"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=66e73e2a7d6d511e9165"
 }
