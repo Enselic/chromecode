@@ -14,7 +14,7 @@ nav: Blog
     </header>
     
     <section class="content collapsed fade-last-line">
-    	{{ post.content }}
+    	{{ post.content | add_data_uri_to_img }}
     </section>
 
     <!-- There is a dependency from Google Tag Manaager to stuff prefixed with 'google-tag-manager'.
