@@ -6,9 +6,10 @@ Before initial release
 * make post-page tags tab-like i.e. show active tag posts below all tags
 * click collapsed post contet (not just expand-button) shall expand post
 * setup Cache-Control
-* when clicking logo, expose a https://setofskills.com/ link
+* mention that this is not a GIMP blog anymore
 
 Possible future improvements:
+* when clicking logo, expose a https://setofskills.com/ link
 * add URL state about tag expand-state	
 * make diamond graphics more crisp
 * Use Compass for instead of manually CSS property prefixing
