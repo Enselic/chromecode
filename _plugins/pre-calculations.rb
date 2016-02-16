@@ -26,14 +26,4 @@ module SetOfSkills
             site.data['posts_by_year'] = years.reverse
         end
     end
-
-    module Filters
-        # Adds a 2x3 transparent png data uri to any img tag.
-        # For use with img lazy-loading
-        def add_data_uri_to_img(input)
-            input.gsub '<img', '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAC0lEQVQI12NgwAUAABoAASRETuUAAAAASUVORK5CYII="'
-        end
-    end
 end
-
-Liquid::Template.register_filter(SetOfSkills::Filters)

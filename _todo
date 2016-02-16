@@ -7,6 +7,7 @@ Before initial release
 * click collapsed post contet (not just expand-button) shall expand post
 * setup Cache-Control
 * mention that this is not a GIMP blog anymore
+* convert tabs to spaces
 
 Possible future improvements:
 * when clicking logo, expose a https://setofskills.com/ link
