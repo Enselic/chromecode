@@ -3,7 +3,7 @@ module SetOfSkillsFilters
     # For use with img lazy-loading
     def add_noscript_for_lazyload_img(input)
     	# TODO: Fix this. rubular.com is useful help. Don't forget test cases
-        input.gsub /(<img[^>]+)data-original=([^\s]+)([^>]*/?>)/, "adf"
+        #input.gsub /(<img[^>]+)data-original=([^\s]+)([^>]*/?>)/, "adf"
     end
     module_function :add_noscript_for_lazyload_img
 end

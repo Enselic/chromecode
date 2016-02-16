@@ -10,7 +10,7 @@ by_year_title: Posts by year
         <h5 class="author-and-date">{{page.date|date:"%b %d, %Y"}} by {{page.author}}</h5>
     </header>
     
-    <section class="content">{{ page.content | add_data_uri_to_img }} </section>
+    <section class="content">{{ page.content }} </section>
 
 	<section class="tags-in-post">
 {% for tag in page.tags %}
