@@ -1,10 +1,10 @@
 To do:
 
 Before initial release
-* add GA support, including what is clicked, expanded etc
 * setup Cache-Control
 
 Possible future improvements:
+* publish site source on github
 * Use http://tkareine.org/blog/2013/02/22/asset-bundling-with-jekyll/ to automatically run RequireJS optimizer
 * make post-page tags tab-like i.e. show active tag posts list below all tags
 * when clicking logo, expose a https://setofskills.com/ link

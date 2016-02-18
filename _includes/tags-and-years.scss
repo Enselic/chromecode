@@ -101,15 +101,22 @@ html.js .posts-by-tag .post-list {
     font-family: Arial, Helvetica, sans-serif
 }
 
-$base: 18px;
-$step: 1px;
+
+@mixin escalating-tag-sizes($base, $step) {
+    .tag {
+        font-size: $base + 10 * $step;
+    }
+    @for $i from 0 through 10 {
+        .tag[data-tag-count="#{$i}"] {
+            font-size: $base + $i * $step;
+        }
+    }
+}
+
+
+@include escalating-tag-sizes(18px, 1px);
 
 /* Default to a big size so we don't have have to define classes for all ints > 0 */
-.tag {
-    font-size: $base + 10 * $step;
-}
-@for $i from 0 through 10 {
-    .tag[data-tag-count="#{$i}"] {
-        font-size: $base + $i * $step;
-    }
+@media (min-width : 768px) and (max-width : 991px) {
+    @include escalating-tag-sizes(14px, 0.5px);
 }
