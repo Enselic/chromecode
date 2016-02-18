@@ -13,14 +13,10 @@ by_year_title: Posts by year
     <section class="content">{{ page.content }} </section>
 
 	<section class="tags-in-post">
+		<h6>tags</h6>
 {% for tag in page.tags %}
         <div class="tag-container">
-    {% include tag.html tagName=tag %}
-            <ul class="h4 post-list">
-    {% for post in site.tags[tag] %}
-	            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-		    </ul>		
+    {% include tag.html tagName=tag tagCount=0 %}
 		</div>
 {% endfor %}
 	</section>

@@ -67,6 +67,11 @@ html.js .posts-by-tag .post-list {
     background: white;
 }
 
+.tags-in-post .tag:hover {
+    color: #333;
+    background: lighten(#e7dc6c, 3%);
+}
+
 .tags h6 {
     color: #ccc;
     text-align: center;
@@ -82,6 +87,17 @@ html.js .posts-by-tag .post-list {
     margin: 0;
     position: relative;
     top: 25px;
+}
+
+.tags-in-post .tag {
+    float: left;
+    margin-left: 10px;
+}
+
+.tags-in-post h6 {
+    margin: 0 0 0 10px;
+    color: #ccc;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 $base: 18px;

@@ -2,8 +2,6 @@ To do:
 
 Before initial release
 * add GA support, including what is clicked, expanded etc
-* show images in front page for posts that have them
-* make post-page tags tab-like i.e. show active tag posts below all tags
 * click collapsed post contet (not just expand-button) shall expand post
 * setup Cache-Control
 * mention that this is not a GIMP blog anymore
@@ -12,6 +10,7 @@ Before initial release
 * update picture
 
 Possible future improvements:
+* make post-page tags tab-like i.e. show active tag posts list below all tags
 * when clicking logo, expose a https://setofskills.com/ link
 * add URL state about tag expand-state	
 * make diamond graphics more crisp
