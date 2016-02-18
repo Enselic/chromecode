@@ -4,7 +4,7 @@ for f in _scss/*; do sass $f --style compressed > _includes/$(basename ${f%%.*}.
 
 */
 
-$blog-content-line-height: 22.85714286px; /* bootstrap font-size-base * line-height-base */
+$blog-content-line-height: 28.5714286px; /* bootstrap font-size-base * line-height-base */
 
 .blog-post {
     margin-bottom: 50px;
