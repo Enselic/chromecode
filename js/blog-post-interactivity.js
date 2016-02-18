@@ -27,10 +27,12 @@ define(['jquery'], function($) {
         });
     });
 
+    /* TODO: Make this work with GTM 
     $(".blog-post .content.collapsed").each(function() {
         $(this).one('click', function(){
             $(this).parent().find(".google-tag-manager-read-more-button").trigger('click');
         });
     });
+    */
 });
 

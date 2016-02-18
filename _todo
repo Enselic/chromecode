@@ -2,17 +2,14 @@ To do:
 
 Before initial release
 * add GA support, including what is clicked, expanded etc
-* ensure events are part of page navigation in GA
 * setup Cache-Control
 
 Possible future improvements:
+* Use http://tkareine.org/blog/2013/02/22/asset-bundling-with-jekyll/ to automatically run RequireJS optimizer
 * make post-page tags tab-like i.e. show active tag posts list below all tags
 * when clicking logo, expose a https://setofskills.com/ link
-* add URL state about tag expand-state	
-* make diamond graphics more crisp
+* add URL state about tag expand-state of tags and posts
 * Use Compass for instead of manually CSS property prefixing
 * sanity check in IE8
-* add "software engineer + interaction design" to logo somewhere
 * add build instructions
-* add build scripts for e.g. main-built-*.js
 * add noscript-variants of lazyloaded imgs
