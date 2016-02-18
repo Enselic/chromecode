@@ -103,6 +103,7 @@ html.js .posts-by-tag .post-list {
 
 
 @mixin escalating-tag-sizes($base, $step) {
+    /* Default to a big size so we don't have have to define classes for all ints > 0 */
     .tag {
         font-size: $base + 10 * $step;
     }
@@ -113,10 +114,8 @@ html.js .posts-by-tag .post-list {
     }
 }
 
+@include escalating-tag-sizes(14px, 0.5px);
 
-@include escalating-tag-sizes(18px, 1px);
-
-/* Default to a big size so we don't have have to define classes for all ints > 0 */
-@media (min-width : 768px) and (max-width : 991px) {
-    @include escalating-tag-sizes(14px, 0.5px);
+@media (min-width : 992px) {
+    @include escalating-tag-sizes(18px, 1px);
 }
