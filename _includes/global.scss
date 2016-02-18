@@ -12,3 +12,8 @@ html.js .javascript-disabled-warning {
     background: #49483e;
 }
 
+img[data-original] {
+    display: block;
+    max-width: 100%;
+    height: auto;	
+}
