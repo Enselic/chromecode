@@ -8,7 +8,7 @@ description: Personal blog and website of Martin "Enselic" Nordholts.
 author: Martin Nordholts
 
 # The URL of your actual domain. This will be used to make absolute links in the RSS feed.
-url: https://setofskills.com/
+url: https://setofskills.com
 
 # Makes pretty (descriptive) permalinks. See Jekyll docs for alternatives.
 permalink: pretty
