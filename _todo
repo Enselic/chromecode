@@ -1,8 +1,5 @@
 To do:
 
-Before initial release
-* setup Cache-Control
-
 Possible future improvements:
 * publish site source on github
 * Use http://tkareine.org/blog/2013/02/22/asset-bundling-with-jekyll/ to automatically run RequireJS optimizer

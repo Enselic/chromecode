@@ -1,3 +1,8 @@
+# Command to upload
+# S3_UPLOAD_ID=... S3_UPLOAD_SECRET=... s3_website push
+#
+# Add --force at the end to change metadata of existing files
+
 s3_id: <%= ENV['S3_UPLOAD_ID'] %>
 s3_secret: <%= ENV['S3_UPLOAD_SECRET'] %>
 s3_bucket: setofskills.com
@@ -16,9 +21,9 @@ max_age:
     "js/require-*": 604800
     "*": 86400
 
- gzip:
-   - .html
-   - .js
+gzip:
+    - .html
+    - .js
 
 # See http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region for valid endpoints
 s3_endpoint: eu-west-1
