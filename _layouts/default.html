@@ -22,14 +22,16 @@
                     window.location = "https://{{ page.target_url }}";
                 }
 
-                window.setInterval(function() {
+                var intervalId = window.setInterval(function() {
                     secondsLeft--;
 
-                    if (secondsLeft >= 0) {
+                    if (secondsLeft >= -10) {
                         document.getElementById("seconds-left").innerHTML = secondsLeft;
                     }
 
                     if (secondsLeft <= 0) {
+                        // In case JS state is preserved after pressing Back
+                        window.clearInterval(intervalId);
                         doRedirect();
                     }
                 }, 1000);
