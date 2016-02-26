@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
 
     {% include head.html %}
 
     <body>
+        <!-- From http://www.paulirish.com/2009/avoiding-the-fouc-v3/ -->
+        <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 
-        <div class="page-content">
-            <div class="wrapper">
-                {{ content }}
-            </div>
+        <div>
+            <h1>This page has moved</h1>
+            <p class="new-location">New location: <br/> <a href="https://{{ page.target_url }}">{{ page.target_url }}</a></p>
+
+            <p class="redirect">You will be redirected in <span id="seconds-left">5</span> seconds.</p>
         </div>
+
+        <script>
+            (function() {
+                var secondsLeft = 5;
+
+                function doRedirect() {
+                    window.location = "https://{{ page.target_url }}";
+                }
+
+                window.setInterval(function() {
+                    secondsLeft--;
+
+                    if (secondsLeft >= 0) {
+                        document.getElementById("seconds-left").innerHTML = secondsLeft;
+                    }
+
+                    if (secondsLeft <= 0) {
+                        // doRedirect();
+                    }
+                }, 1000);
+            })();
+        </script>
 
     </body>
 </html>
