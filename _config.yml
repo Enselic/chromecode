@@ -1,0 +1,42 @@
+# Name of your blog (this will show up at the top of your page and in the RSS feed)
+name: Martin "Enselic" Nordholts' blog and website
+
+# Short description (goes below the title; it will also be used in the RSS feed)
+description: Personal blog and website of Martin "Enselic" Nordholts.
+
+# Your name, as you want it to appear underneath each post and in the footer
+author: Martin Nordholts
+
+# The URL of your actual domain. This will be used to make absolute links in the RSS feed.
+url: https://setofskills.com
+
+# Makes pretty (descriptive) permalinks. See Jekyll docs for alternatives.
+permalink: pretty
+
+plugins_dir: _plugins
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.md, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, build.js, node_modules, 'chromecode.sublime-project', 'chromecode.sublime-workspace']
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      nav: "Blog"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      tag_title: Tags
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      by_year_title: Posts by year
+
+sass:
+  style: compressed
