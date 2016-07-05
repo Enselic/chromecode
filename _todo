@@ -7,7 +7,4 @@ Possible future improvements:
 * make post-page tags tab-like i.e. show active tag posts list below all tags
 * when clicking logo, expose a https://setofskills.com/ link
 * add URL state about tag expand-state of tags and posts
-* Use Compass for instead of manually CSS property prefixing
-* sanity check in IE8
 * add build instructions
-* add noscript-variants of lazyloaded imgs
