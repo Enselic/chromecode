@@ -239,7 +239,7 @@ define(['jquery'], function($) {
 
     var animationController = new AnimationController(window);
 
-    $('.logo-text > span').on('mousedown touchstart', function(e) {
+    $('.logo-text > span').not('.space').on('mousedown touchstart', function(e) {
         // Prevent mousedown from triggering later
         if (e.type === 'touchstart') $(this).off('mousedown');
 
