@@ -30,7 +30,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-define(['jquery'], function($) {
+define(['jquery', 'animation-controller'], function($, AnimationController) {
     'use strict';
 
 
@@ -106,16 +106,16 @@ define(['jquery'], function($) {
     var forcePerpendicular = new Victor();
     var GRAVITY = new Victor(0, 200);
 
-    PendulumSquare.prototype.applyForce = function(forceVector, deltaTimeSeconds) {
+    PendulumSquare.prototype.update = function(deltaTimeSeconds) {
         // rotation = 0 => pendulum points downwards (hangs still)
         pendulum.x = 0;
         pendulum.y = 1;
         pendulum.rotate(this.rotation);
 
         forceNormal.copy(pendulum);
-        forceNormal.multiplyScalar(pendulum.dot(forceVector));
+        forceNormal.multiplyScalar(pendulum.dot(GRAVITY));
 
-        forcePerpendicular.copy(forceVector);
+        forcePerpendicular.copy(GRAVITY);
         forcePerpendicular.subtract(forceNormal);
 
         var rotationalAcc = pendulum.cross(forcePerpendicular) / Math.max(10, this.rotatingPart.width() / 10);
@@ -157,66 +157,13 @@ define(['jquery'], function($) {
         var rotatingPart = this.rotatingPart;
         window.setTimeout(function(){
             rotatingPart.css({
-                'animationName': 'glimmer',
-                '-webkitAnimationName': 'glimmer',
+                'animationName': 'none',
+                '-webkitAnimationName': 'none',
             });
         }, 100);
     }
 
 
-    /**
-     * Clever starting and stopping of the animation is taken care of by this class,
-     * as well as running the animation itself.
-     */
-    function AnimationController(animator) {
-        this.animator = animator;
-        this.framesWithoutMovement = 0;
-        this.animationRunning = false;
-        this.lastTimeStamp = null;
-    }
-
-    AnimationController.prototype.ensureRunning = function() {
-        if (!this.animationRunning) {
-            this.animator.requestAnimationFrame(this.runFrame.bind(this));
-            this.animationRunning = true;
-            this.framesWithoutMovement = 0;
-        }
-    }
-
-    AnimationController.prototype.runFrame = function(timestamp) {
-        // Handle special case of first invocation
-        if (!this.lastTimeStamp) {
-            this.lastTimeStamp = timestamp;
-        }
-
-        var deltaTimeMs = timestamp - this.lastTimeStamp;
-        this.lastTimeStamp = timestamp;
-
-        // Prevent weird delta times due to e.g. low prio or slow devices
-        deltaTimeMs = Math.max(0, deltaTimeMs);
-        deltaTimeMs = Math.min(100, deltaTimeMs);
-
-        var animationStandingStill = true;
-        rotatingParts.forEach(function(pendulumSquare) {
-            pendulumSquare.applyForce(GRAVITY, deltaTimeMs / 1000);
-
-            if (!pendulumSquare.isStandingStill()) {
-                animationStandingStill = false;
-            }
-        });
-
-        if (animationStandingStill) {
-            this.framesWithoutMovement++;
-        } else {
-            this.framesWithoutMovement = 0;
-        }
-
-        if (this.framesWithoutMovement < 10) {
-            this.animator.requestAnimationFrame(this.runFrame.bind(this));    
-        } else {
-            this.animationRunning = false;
-        }
-    }
 
 
     // Setup code to keep track of all components that shall rotate
@@ -227,7 +174,6 @@ define(['jquery'], function($) {
     });
 
     $('.logo-container').on('mousedown touchstart', function(e) {
-        console.log('sdfsdfdsf');
         // Prevent mousedown from triggering later
         if (e.type === 'touchstart') $(this).off('mousedown');
 
@@ -237,7 +183,7 @@ define(['jquery'], function($) {
         animationController.ensureRunning();
     });
 
-    var animationController = new AnimationController(window);
+    var animationController = new AnimationController(window, rotatingParts);
 
     $('.logo-text > span').not('.space').on('mousedown touchstart', function(e) {
         // Prevent mousedown from triggering later
@@ -275,7 +221,6 @@ define(['jquery'], function($) {
                     'opacity': ''
                 });
             }
-
         });
     });
 });
