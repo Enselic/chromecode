@@ -101,7 +101,7 @@
     {% assign postYear = entry[0] %}
     {% assign postsThisYear = entry[1] %}
     {% assign posts = entry[2] %}
-                        <div class="year-container">
+                        <div class="year-container blured-and-faded">
                             <h3>{{postYear}}</h3> 
                             <ul class="h5 post-list">
     {% for post in posts %}
@@ -116,7 +116,7 @@
             
         </div>
 
-        <script async data-main="/js/main-build-17a88e5cf8cb9c70933deb5e8af13071.js" src="/js/require-2.1.22.min.js"></script>
+        <script async data-main="/js/main.js" src="/js/require-2.1.22.min.js"></script>
 {% if page.has_disqus_comment_count %}
         <!--script async id="dsq-count-scr" src="//setofskills-com.disqus.com/count.js"></script-->
 {% endif %}

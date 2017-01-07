@@ -1,0 +1,42 @@
+<canvas width="1000" height="1000" id="logo"></canvas>
+
+<script async data-main="/js/logo-main.js" src="/js/require-2.1.22.min.js"></script>
+
+<script>
+(function(){
+    'use strict';
+
+    var pavilionDepth = 100;
+    var pavilionAngle = Math.PI / 4;
+    var crownHeight = 30;
+    var crownAngle = Math.PI / 4;
+    var facetCount = 5;
+
+    // The smallest amount of radians the diamond needs to be turned to appear the same again
+    var symmetricAngle = Math.PI / facetCount;
+
+    // For terminology, see https://en.wikipedia.org/wiki/Diamond_cut#/media/File:Diamond_facets.svg
+    var leftEdge = -Math.tan(Math.PI / 2 - pavilionAngle) * pavilionDepth;
+    var tableLeft = leftEdge + crownHeight / Math.tan(crownAngle);
+
+    var c2 = document.getElementById('logo').getContext('2d');
+    c2.fillStyle = '#f00';
+
+    c2.translate(500.5, 500.5);
+
+    c2.beginPath();
+    c2.moveTo(0, pavilionDepth);
+    c2.lineTo(leftEdge, 0);
+    c2.lineTo(tableLeft, -crownHeight);
+    c2.lineTo(-tableLeft, -crownHeight);
+    c2.lineTo(-leftEdge, 0);
+    c2.closePath();
+    c2.stroke();
+
+    function drawPavilionFacet(leftStart, leftEnd, color) {
+
+    }
+
+    })();
+})();
+</script>
