@@ -6,7 +6,7 @@ by_year_title: Posts by year
 nav: Blog
 ---
 
-{% for post in site.posts %}
+{% for post in site.posts limit:10 %}
 <article class="blog-post front-page">
     <header>
         <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
@@ -14,7 +14,7 @@ nav: Blog
     </header>
     
     <section class="content collapsed fade-last-line">
-    	{{ post.content }}
+    	{{ post.content | truncatewords: 100 }}
     </section>
 
     <a class="read-more-button" href="{{site.baseurl}}{{post.url}}">Read more</a>
