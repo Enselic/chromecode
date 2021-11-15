@@ -6,7 +6,7 @@ by_year_title: Posts by year
 nav: Blog
 ---
 
-{% for post in site.posts limit:10 %}
+{% for post in site.posts %}
 <article class="blog-post front-page">
     <header>
         <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
