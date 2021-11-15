@@ -18,10 +18,7 @@ has_disqus_comment_count: true
     	{{ post.content }}
     </section>
 
-    <!-- There is a dependency from Google Tag Manaager to stuff prefixed with 'google-tag-manager'.
-         Don't change those unless you know what you're doing -->
-    <a class="google-tag-manager-read-more-button" id="{{ post.id | slugify }}">Read more</a><a data-disqus-identifier="{{ post.id }}" href="{{site.baseurl}}{{post.url}}#disqus_thread">{{ post.cached_comment_count }} Comment{% if post.cached_comment_count != 1 %}s{% endif %}
-	</a>
+    <a class="read-more-button" href="{{site.baseurl}}{{post.url}}">Read more</a>
 
 </article>
 {% endfor %}
