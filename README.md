@@ -1,2 +1,2 @@
-# setofskills.com
-Source code for setofskills.com
+# chromecode.com
+Source code for the redirect-to-setofskills.com version of chromecode.com

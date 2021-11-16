@@ -1,7 +1,4 @@
-*sublime*
 .DS_Store
+.jekyll-metadata
 .sass-cache
 _site
-index.prototype.html
-node_modules
-sublime
